@@ -28,10 +28,11 @@ body {
   background-color: #eee;
 }
 
-.form-signin {
+.form-signin1 {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+  float: right;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -62,4 +63,9 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  float: left;
+}
