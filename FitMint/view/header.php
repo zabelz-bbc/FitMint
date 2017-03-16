@@ -53,7 +53,8 @@
 							</div>
 							<div id="navbar" class="navbar-collapse collapse">
 								<ul class="nav navbar-nav">
-									<li class="active"><a href="#">Home</a></li>
+						
+											<li><a href="/home/home">home</a></li>
 									<li><a href="/user/login">Login</a></li>
 									<li><a href="/home/ueberUns">Über uns</a></li>
 									<li><a href="/user/einstellungen"><span
