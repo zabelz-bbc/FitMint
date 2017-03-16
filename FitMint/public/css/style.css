@@ -1,6 +1,5 @@
 body {
   padding-top: 50px;
-  background-color: RED;
 }
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
@@ -23,6 +22,7 @@ body {
 }
 .navbar-wrapper .navbar .container {
   width: auto;
+  background-color: black;
 }
 
 
