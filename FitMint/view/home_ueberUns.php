@@ -7,7 +7,7 @@
 		<div class="dhd">
 		<h2 class="item title">Über uns</h2>
 			<?php
-			echo '<a href="home_home.php"><img src="../images/logo-round.jpg" /></a>';
+			echo '<a href="home"><img src="../images/logo-round.jpg" /></a>';
 
 			?>       
 		<p>Willkommen auf unserer Website!</p>
