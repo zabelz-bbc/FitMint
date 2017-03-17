@@ -38,6 +38,7 @@ body {
   padding: 15px;
   margin: 0 auto;
   float: right;
+
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -67,12 +68,14 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+
 }
 .form-signin {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
   float: left;
+
 }
 
 
@@ -159,9 +162,7 @@ body {
 /* Featurettes
 ------------------------- */
 
-.featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
-}
+
 
 /* Thin out the marketing headings */
 .featurette-heading {
@@ -202,6 +203,7 @@ body {
 
   .featurette-heading {
     font-size: 50px;
+ 
   
   }
 }

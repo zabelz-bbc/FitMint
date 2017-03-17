@@ -45,8 +45,8 @@ class HomeController
 // 		$userRepository = new UserRepository ();
 	
 		$view = new View ( 'home_home' );
-		$view->title = 'Startseite';
-		$view->heading = 'Startseite';
+		$view->title = 'FitMint';
+		$view->heading = '';
 		$view->display();
 	}
 	
