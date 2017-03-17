@@ -84,14 +84,6 @@
 	</a>
 
 
-
-
-
-
-
-
-
-
 </div>
 <!-- /.carousel -->
 
@@ -121,7 +113,7 @@
 		</div>
 		<div class="col-xs-5">
 			<img class="featurette-image img-responsive center-block"
-				data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+				src="/images/logo-round-space.png" alt="Bild konnte nicht geladen werden">
 		</div>
 	</div>
 
@@ -139,7 +131,7 @@
 		</div>
 		<div class="col-xs-5 col-xs-pull-7">
 			<img class="featurette-image img-responsive center-block"
-				data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+				src="/images/logo-round-space.png" alt="Bild konnte nicht geladen werden">
 		</div>
 	</div>
 
@@ -157,7 +149,7 @@
 		</div>
 		<div class="col-xs-5">
 			<img class="featurette-image img-responsive center-block"
-				data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+				src="/images/logo-round-space.png" alt="Bild konnte nicht geladen werden">
 		</div>
 	</div>
 
