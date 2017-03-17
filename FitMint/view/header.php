@@ -57,8 +57,6 @@
 									<li><a href="/home/ueberUns">Über uns</a></li>
 									<li><a href="/user/einstellungen"><span
 											class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
-									<li><a href="/home/suche"><span
-											class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
 								</ul>
 							</div>
 						</div>
