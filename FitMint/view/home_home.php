@@ -1,8 +1,8 @@
 
 <!-- Carousel
     ================================================== -->
-    
-<h1 align ="center">FitMint</h1>
+
+<h1 align="center">FitMint</h1>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
@@ -83,15 +83,6 @@
 		aria-hidden="true"></span> <span class="sr-only">Next</span>
 	</a>
 
-
-
-
-
-
-
-
-
-
 </div>
 <!-- /.carousel -->
 
@@ -106,11 +97,6 @@
 
 	<!-- START THE FEATURETTES -->
 
-<<<<<<< HEAD
-=======
-      <!-- <hr class="featurette-divider">-->
-
->>>>>>> branch 'master' of https://github.com/zabelz-bbc/FitMint.git
 	<hr class="featurette-divider">
 
 	<div class="row featurette">
