@@ -1,7 +1,15 @@
+/* BODY
+------------------------------------------------- */
 body {
-	padding-top: 40px;
+	padding-bottom: centerx;
+	color: #5a5a5a;
+	background-color: #D6EEE9;
+	padding-top: 130px;
 	padding-bottom: 40px;
 }
+
+
+
 
 h1 {
 	color: 
@@ -33,11 +41,7 @@ h1 {
 	background-color: black;
 }
 
-body {
-	padding-top: 130px;
-	padding-bottom: 40px;
-	background-color: #D6EEE9;
-}
+
 
 .form-signin1 {
 <<<<<<< HEAD
@@ -132,13 +136,7 @@ body {
 	float: left;
 }
 
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
-body {
-	padding-bottom: centerx;
-	color: #5a5a5a;
-}
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
