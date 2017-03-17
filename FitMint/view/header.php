@@ -15,6 +15,7 @@
 <!-- integrity = überprüfung ob es die richtige Datei ist. -->
 
 <!-- Custom styles for this template -->
+
 <link href="/css/style.css" rel="stylesheet">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -58,7 +59,6 @@
 											class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
 									<li><a href="/home/suche"><span
 											class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
-									</li>
 								</ul>
 							</div>
 						</div>
@@ -66,9 +66,6 @@
 
 				</div>
 			</div>
-	
-	</nav>
-
 	<div class="container"></div>
 
 	<h1><?= $heading ?></h1>
