@@ -182,7 +182,7 @@ h3 {
 
 /* ------------------------- */
 .featurette-divider {
-	margin: 80px 0; /*Space out the Bootstrap <hr> more */
+	margin: 20px 0; /*Space out the Bootstrap <hr> more */
 	border-top: 1px solid #000;
 }
 
@@ -222,7 +222,8 @@ Thin out the marketing headings
 		line-height: 1.4;
 	}
 	.featurette-heading {
-		font-size: 50px;
+		font-size: 30px;
+	
 	}
 }
 
@@ -233,5 +234,9 @@ Thin out the marketing headings
 	#footer {
 		text-align: center;
 		padding-top: 16%;
+	}
+	.lead{
+	font-size: 10pt;
+
 	}
 }
