@@ -60,7 +60,9 @@
 
       <!-- START THE FEATURETTES -->
 
-      <hr class="featurette-divider">
+      <!-- <hr class="featurette-divider">-->
+
+	<hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-xs-7">
