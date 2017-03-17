@@ -36,7 +36,7 @@ class HomeController
 	{
 		$view = new View('home_index');
 		$view->title = 'Startseite';
-// 		$view->heading = 'Startseite';
+ 		$view->heading = '';
 		$view->display();
 	}
 	
@@ -47,24 +47,17 @@ class HomeController
 		$view = new View ( 'home_home' );
 		$view->title = 'FitMint';
 		$view->heading = '';
+		$view->active = 'home';
 		$view->display();
 	}
-	
-	
-	public function suche()
-	{
-		$view = new View('home_suche');
-		$view->title = 'Startseite';
-		$view->heading = 'Suche';
-		$view->display();
-	}
-	
+		
 	public function ueberUns()
 	{
 		$view = new View('home_ueberUns');
 		$view->title = 'Über uns';
 		$view->heading = '';
-		$view->display(); //center align
+		$view->active = 'ueberUns';
+		$view->display();
 	}
 	
 }

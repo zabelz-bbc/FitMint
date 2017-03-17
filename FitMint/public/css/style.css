@@ -54,6 +54,10 @@ h3 {
 	background-color: black;
 }
 
+.active-page {
+	background-color: blue;
+}
+
 
 
 .form-signin1 {
