@@ -4,15 +4,20 @@ body {
 	padding-bottom: centerx;
 	color: #5a5a5a;
 	background-color: #D6EEE9;
-	padding-top: 130px;
-	padding-bottom: 40px;
+	padding-top: 100px;
+	padding-bottom: 150px;
+	font-size: 15pt;
+
 }
 
 h1 {
 	color: Black;
-	font-size: 30pt;
+	font-size: 50pt;
 	text-align: center;
-	margin-bottom: 0%;
+	margin-bottom: 5%;
+	font-family: 'Lora', serif;
+	
+	
 }
 
 h3 {
