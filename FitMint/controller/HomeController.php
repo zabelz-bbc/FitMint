@@ -36,7 +36,7 @@ class HomeController
 	{
 		$view = new View('home_index');
 		$view->title = 'Startseite';
-		$view->heading = 'Startseite';
+// 		$view->heading = 'Startseite';
 		$view->display();
 	}
 	
@@ -55,17 +55,18 @@ class HomeController
 	{
 		$view = new View('home_suche');
 		$view->title = 'Startseite';
-		$view->heading = 'Startseite';
+		$view->heading = 'Suche';
 		$view->display();
 	}
 	
 	public function ueberUns()
 	{
-
 		$view = new View('home_ueberUns');
-		$view->title = 'Benutzer';
-		$view->heading = 'Benutzer';
-		$view->display();
+		$view->title = 'Über uns';
+		$view->heading = '';
+		$view->display(); //center align
 	}
 	
 }
+
+?>
