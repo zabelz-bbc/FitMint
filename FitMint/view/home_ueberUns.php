@@ -3,6 +3,7 @@
 </head>
 
 <article class="hreview open special">
+
 	<?php if (empty($users)): ?>
 		<div class="dhd">
 		<h2 class="item title">Über uns</h2>
