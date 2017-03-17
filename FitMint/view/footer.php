@@ -1,4 +1,6 @@
+<html>
         <hr>
+    <div>
         <footer>
           <p>&copy; FitMint 2016</p>
         </footer>
