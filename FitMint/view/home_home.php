@@ -106,6 +106,11 @@
 
 	<!-- START THE FEATURETTES -->
 
+<<<<<<< HEAD
+=======
+      <!-- <hr class="featurette-divider">-->
+
+>>>>>>> branch 'master' of https://github.com/zabelz-bbc/FitMint.git
 	<hr class="featurette-divider">
 
 	<div class="row featurette">
