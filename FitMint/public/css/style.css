@@ -9,12 +9,25 @@ body {
 }
 
 
-
-
 h1 {
-	color: 
+	color: Black;
+	font-size: 30pt;
+	text-align: center;
+	margin-bottom: 0%;
 }
 
+h3 {
+	text-align: center;
+	margin-top: 5%;
+}
+
+#logo {
+	text-align: center;
+}
+
+#textÜberuns {
+	text-align: center;
+}
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
