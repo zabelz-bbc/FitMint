@@ -1,7 +1,7 @@
 <html>
         <hr>
     <div>
-        <footer>
+        <footer id = "footer">
           <p>&copy; FitMint 2016</p>
         </footer>
     </div>
