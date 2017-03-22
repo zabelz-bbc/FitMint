@@ -109,7 +109,7 @@
 		</div>
 		<div class="col-xs-5">
 			<img class="featurette-image img-responsive center-block"
-				src="/images/logo-round-space.png"
+				src="/images/1.png"
 				alt="Bild konnte nicht geladen werden">
 		</div>
 	</div>
