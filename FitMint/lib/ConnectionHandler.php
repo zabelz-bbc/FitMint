@@ -59,8 +59,10 @@ class ConnectionHandler
             if (self::$connection->connect_error) {
                 $error = self::$connection->connect_error;
                 throw new Exception("Verbindungsfehler: $error");
-            }
-
+            } 
+            //Exception fangen und behandeln
+            
+            
             self::$connection->set_charset('utf8');
         }
 

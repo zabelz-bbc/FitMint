@@ -136,7 +136,9 @@ class Repository
         $query = "SELECT * FROM {$this->tableName} LIMIT 0, $max";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->execute();
+        if ($statement){
+        	$statement->execute();
+        }
 
         $result = $statement->get_result();
         if (!$result) {
