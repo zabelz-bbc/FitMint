@@ -34,9 +34,10 @@ class HomeController
 	 */
 	public function index()
 	{
-		$view = new View('home_index');
+		$view = new View('home_home');
 		$view->title = 'Startseite';
  		$view->heading = '';
+ 		$view->active = 'home';
 		$view->display();
 	}
 	

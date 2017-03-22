@@ -38,7 +38,8 @@ class DefaultController
         //   View Klasse beschrieben.
         $view = new View('home_home');
         $view->title = 'Startseite';
-        $view->heading = 'Startseite';
+         $view->heading = '';
+        $view->active = 'home';
         $view->display();
     }
 }

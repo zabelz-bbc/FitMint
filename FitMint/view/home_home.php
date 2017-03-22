@@ -103,8 +103,7 @@
 	<div class="row featurette">
 		<div class="col-xs-7">
 			<h2 class="featurette-heading">
-				First featurette heading. <span class="text-muted">It'll blow your
-					mind.</span>
+				Diese Schuhe welche den Sommer erobern werden <span class="text-muted">Was haben sie insich?</span>
 			</h2>
 			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla.
 				Vestibulum id ligula porta felis euismod semper. Praesent commodo
@@ -179,6 +178,18 @@
 				src="/images/logo-round-space.png"
 				alt="Bild konnte nicht geladen werden">
 		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	</div>
 
 	<hr class="featurette-divider">
