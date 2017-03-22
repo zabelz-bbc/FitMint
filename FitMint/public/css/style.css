@@ -58,40 +58,9 @@ h3 {
 	background-color: black;
 }
 
-/*============================================================================
-SIGN IN 1 */
-
-.form-signin1 .form-control {
-	position: relative;
-	height: auto;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	padding: 10px;
-	font-size: 16px;
-}
-
-.form-signin1 .form-signin-heading, .form-signin .checkbox {
-	margin-bottom: 10px;
-}
-
-.form-signin1 {
-	max-width: 330px;
-	padding: 15px;
-	margin: 10 auto;
-	float: right;
-}
-
-.form-signin1 input[type="email"]{
-	margin-bottom: 5px;
-}
-
-.form-signin1 .checkbox {
-	font-weight: normal;
-}
 
 /*============================================================================
-SIGN IN */
+SIGN IN -> Login -> Login*/
 
 .form-signin .form-signin-heading, .form-signin .checkbox {
 	margin-bottom: 10px;
@@ -132,6 +101,52 @@ SIGN IN */
 	padding: 15px;
 	margin: 0 auto;
 	float: left;
+}
+
+
+
+/*============================================================================
+SIGN IN 1 -> Login -> Registrieren*/
+
+.form-signin1 .form-signin-heading, .form-signin .checkbox {
+	margin-bottom: 10px;
+}
+
+.form-signin1 .checkbox {
+	font-weight: normal;
+}
+
+.form-signin1 .form-control {
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.form-signin1 .form-control:focus {
+	z-index: 2;
+}
+
+.form-signin1 input[type="email"]{
+	margin-bottom: 5px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin1 input[type="password"] {
+	margin-bottom: 5px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.form-signin1 {
+	max-width: 330px;
+	padding: 15px;
+	margin: 10 auto;
+	float: right;
 }
 
 
