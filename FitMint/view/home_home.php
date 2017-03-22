@@ -1,8 +1,8 @@
 
 <!-- Carousel
     ================================================== -->
-    
-<h1 align ="center">FitMint</h1>
+
+<h1 align="center">FitMint</h1>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
@@ -15,7 +15,7 @@
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
 			<img class="first-slide"
-				src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+				src="/images/logo-round-space.png"
 				alt="First slide">
 			<div class="container">
 				<div class="carousel-caption">
@@ -29,7 +29,7 @@
 		</div>
 		<div class="item">
 			<img class="second-slide"
-				src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+				src="/images/logo-round-space.png"
 				alt="Second slide">
 			<div class="container">
 				<div class="carousel-caption">
@@ -44,7 +44,7 @@
 		</div>
 		<div class="item">
 			<img class="third-slide"
-				src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+				src="/images/logo-round-space.png"
 				alt="Third slide">
 			<div class="container">
 				<div class="carousel-caption">
@@ -60,7 +60,7 @@
 
 		<div class="item">
 			<img class="third-slide"
-				src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+				src="/images/logo-round-space.png"
 				alt="Third slide">
 			<div class="container">
 				<div class="carousel-caption">
@@ -97,7 +97,7 @@
 
 
 	<!-- START THE FEATURETTES -->
-    <!-- <hr class="featurette-divider">-->
+	<!-- <hr class="featurette-divider">-->
 	<hr class="featurette-divider">
 
 	<div class="row featurette">
@@ -110,10 +110,19 @@
 				Vestibulum id ligula porta felis euismod semper. Praesent commodo
 				cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
 				tellus ac cursus commodo.</p>
+			<button type="button" class="btn btn-success">
+				<span class="glyphicon glyphicon-thumbs-up"></span>
+			</button>
+			<button type="button" class="btn btn-danger">
+				<span class="glyphicon glyphicon-thumbs-down"></span>
+			</button>
+			<textarea placeholder="Kommentar" class="form-control Kommentar"
+				rows="3"></textarea>
 		</div>
 		<div class="col-xs-5">
 			<img class="featurette-image img-responsive center-block"
-				src="/images/logo-round-space.png" alt="Bild konnte nicht geladen werden">
+				src="/images/logo-round-space.png"
+				alt="Bild konnte nicht geladen werden">
 		</div>
 	</div>
 
@@ -128,10 +137,20 @@
 				Vestibulum id ligula porta felis euismod semper. Praesent commodo
 				cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
 				tellus ac cursus commodo.</p>
+			<button type="button" class="btn btn-success">
+				<span class="glyphicon glyphicon-thumbs-up"></span>
+			</button>
+			<button type="button" class="btn btn-danger">
+				<span class="glyphicon glyphicon-thumbs-down"></span>
+			</button>
+			<textarea placeholder="Kommentar" class="form-control Kommentar"
+				rows="3"></textarea>
 		</div>
 		<div class="col-xs-5 col-xs-pull-7">
 			<img class="featurette-image img-responsive center-block"
-				src="/images/logo-round-space.png" alt="Bild konnte nicht geladen werden">
+				src="/images/logo-round-space.png"
+				alt="Bild konnte nicht geladen werden">
+
 		</div>
 	</div>
 
@@ -146,10 +165,19 @@
 				Vestibulum id ligula porta felis euismod semper. Praesent commodo
 				cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
 				tellus ac cursus commodo.</p>
+			<button type="button" class="btn btn-success">
+				<span class="glyphicon glyphicon-thumbs-up"></span>
+			</button>
+			<button type="button" class="btn btn-danger">
+				<span class="glyphicon glyphicon-thumbs-down"></span>
+			</button>
+			<textarea placeholder="Kommentar" class="form-control Kommentar"
+				rows="3"></textarea>
 		</div>
 		<div class="col-xs-5">
 			<img class="featurette-image img-responsive center-block"
-				src="/images/logo-round-space.png" alt="Bild konnte nicht geladen werden">
+				src="/images/logo-round-space.png"
+				alt="Bild konnte nicht geladen werden">
 		</div>
 	</div>
 

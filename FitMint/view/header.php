@@ -17,12 +17,14 @@
 <!-- Custom styles for this template -->
 
 <link href="/css/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
 </head>
 <body>
 		<div class="container">
@@ -53,15 +55,15 @@
 							<div id="navbar" class="navbar-collapse collapse">
 								<ul class="nav navbar-nav">
 										<li><a href="home/home" <?php if (strcmp('home', $active)==0) {
-										echo 'class = \'active-page\'';}?> } >Home</a></li>
+										echo 'class = \'active-page\'';}?> >Home</a></li>
 										
 									<li><a href="/user/login" <?php if (strcmp('login', $active)==0) {
-										echo 'class = \'active-page\'';}?> } >Login</a></li>
+										echo 'class = \'active-page\'';}?> >Login</a></li>
 										
 									<li><a href="/home/ueberUns" <?php if (strcmp('ueberUns', $active)==0) {
-										echo 'class = \'active-page\'';}?> }>Über Uns</a></li>
+										echo 'class = \'active-page\'';}?> >Über Uns</a></li>
 										
-									<li><a href="/user/einstellungen"'><span
+									<li><a href="/user/einstellungen"><span
 											class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
 								</ul>
 							</div>
