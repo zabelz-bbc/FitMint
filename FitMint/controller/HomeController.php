@@ -34,6 +34,8 @@ class HomeController
 	 */
 	public function index()
 	{
+		//TODO goto db, fetch data
+		// $view->posts = post from db
 		$view = new View('home_home');
 		$view->title = 'Startseite';
 //  		$view->heading = '';
