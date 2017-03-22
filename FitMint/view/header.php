@@ -54,7 +54,7 @@
 							</div>
 							<div id="navbar" class="navbar-collapse collapse">
 								<ul class="nav navbar-nav">
-										<li><a href="home/home" <?php if (strcmp('home', $active)==0) {
+										<li><a href="/home/home" <?php if (strcmp('home', $active)==0) {
 										echo 'class = \'active-page\'';}?> >Home</a></li>
 										
 									<li><a href="/user/login" <?php if (strcmp('login', $active)==0) {
