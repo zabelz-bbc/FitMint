@@ -246,6 +246,12 @@ Thin out the marketing headings
 	}
 	.btn btn-success {
 	}
-	
-	
 }
+	/* Page Up Button
+-------------------------------------------------- */
+.back-to-top {
+	right: 30px;
+	bottom: 70px;
+	position: fixed;
+}
+
