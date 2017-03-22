@@ -1,4 +1,3 @@
-
 <!-- Carousel
     ================================================== -->
 
@@ -10,7 +9,6 @@
 		<li data-target="#myCarousel" data-slide-to="1"></li>
 		<li data-target="#myCarousel" data-slide-to="2"></li>
 		<li data-target="#myCarousel" data-slide-to="3"></li>
-
 	</ol>
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
@@ -54,7 +52,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="item">
 			<img class="third-slide" src="/images/logo-round-space.png"
 				alt="Third slide">
@@ -78,20 +75,15 @@
 		data-slide="next"> <span class="glyphicon glyphicon-chevron-right"
 		aria-hidden="true"></span> <span class="sr-only">Next</span>
 	</a>
-
-
 </div>
+
+
 <!-- /.carousel -->
-
-
 <!-- Marketing messaging and featurettes
     ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
 <div class="container marketing">
-
-
-
 	<!-- START THE FEATURETTES -->
 	<!-- <hr class="featurette-divider">-->
 	<hr class="featurette-divider">
@@ -121,9 +113,7 @@
 				alt="Bild konnte nicht geladen werden">
 		</div>
 	</div>
-
 	<hr class="featurette-divider">
-
 	<div class="row featurette">
 		<div class="col-xs-7 col-xs-push-5">
 			<h2 class="featurette-heading">
@@ -146,10 +136,8 @@
 			<img class="featurette-image img-responsive center-block"
 				src="/images/logo-round-space.png"
 				alt="Bild konnte nicht geladen werden">
-
 		</div>
 	</div>
-
 	<hr class="featurette-divider">
 
 	<div class="row featurette">
@@ -177,9 +165,12 @@
 		</div>
 	</div>
 
-	<span class="back-to-top"> <a  style=”display: inline;” href="home">
+
+	<!-- Page Up Button
+    ================================================== -->
+
+	<span class="back-to-top"> <a style=”display: inline;” href="home">
 			<button type="button" class="btn btn-info">
 				<span class="glyphicon glyphicon-menu-up"></span>
-			</button>
-	</a>
+			</button></a>
 	</span>
