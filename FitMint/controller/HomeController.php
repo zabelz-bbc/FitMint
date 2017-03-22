@@ -42,8 +42,6 @@ class HomeController
 	}
 	
 	public function home() {
-// 		require_once 'repository/UserRepository.php';
-// 		$userRepository = new UserRepository ();
 	
 		$view = new View ( 'home_home' );
 		$view->title = 'FitMint';
@@ -58,6 +56,15 @@ class HomeController
 		$view->title = 'Über uns';
 		$view->heading = '';
 		$view->active = 'ueberUns';
+		$view->display();
+	}
+	
+	public function einstellungen()
+	{
+		$view = new View('user_einstellungen');
+		$view->title = 'Einstellungen';
+		$view->heading = '';
+		$view->active = 'einstellungen';
 		$view->display();
 	}
 	

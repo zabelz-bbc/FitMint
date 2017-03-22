@@ -63,8 +63,10 @@
 									<li><a href="/home/ueberUns" <?php if (strcmp('ueberUns', $active)==0) {
 										echo 'class = \'active-page\'';}?> >Über Uns</a></li>
 										
-									<li><a href="/user/einstellungen"><span
-											class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
+									<li><a href="/user/einstellungen" <?php if (strcmp('einstellungen', $active)==0) {
+										echo 'class = \'active-page\'';}?> ><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
+									
+									
 								</ul>
 							</div>
 						</div>

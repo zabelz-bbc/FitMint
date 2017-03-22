@@ -10,7 +10,7 @@ require_once 'ConnectionHandler.php';
  *       auslesen. (SELECT mit WHERE)
  *   - Den Datensatz mit einer bestimmten id löschen
  *   - Einen neuen Datensatz erstellen.
- *   - Prüfen ob in der Benutzertabelle ein Datensatz mit dem vom Benutzer
+ *   - Prüfen ob in der Benutzertabelle ein Datensatz mit dem vom 
  *       eingegebenen benutzernamen und passwort gibt.
  *
  * Die Idee ist hier, dass es für jede solche Operation auf dem Model eine

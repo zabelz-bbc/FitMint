@@ -24,7 +24,7 @@
   <li><a href="#">Home</a></li>
   <li><a href="#">Trends</a></li>
    <li><a href="#">Login</a></li>
-     <li><a href="#">�ber uns</a></li>
+     <li><a href="#">über uns</a></li>
        <li><a href="#"></a></li>
          <li><a href="#"></a></li>
 </ul></nav>

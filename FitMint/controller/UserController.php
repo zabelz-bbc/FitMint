@@ -9,8 +9,9 @@ class UserController {
 		$userRepository = new UserRepository ();
 		$view = new View ( 'user_index' );
 		$view->title = 'Benutzer';
-		$view->heading = 'Benutzer';
+		$view->heading = '';
 		$view->users = $userRepository->readAll ();
+		$view->active = 'login';
 		$view->display ();
 	}
 	public function login() {
@@ -18,8 +19,9 @@ class UserController {
 		
 		$view = new View ( 'user_login' );
 		$view->title = 'Benutzer';
-		$view->heading = 'Benutzer';
+		$view->heading = '';
 		$view->users = $userRepository->readAll ();
+		$view->active = 'login';
 		$view->display ();
 	}
 	public function einstellungen() {
@@ -27,14 +29,16 @@ class UserController {
 		
 		$view = new View ( 'user_einstellungen' );
 		$view->title = 'Benutzer';
-		$view->heading = 'Benutzer';
+		$view->heading = '';
 		$view->users = $userRepository->readAll ();
+		$view->active = 'login';
 		$view->display ();
 	}
 	public function create() {
 		$view = new View ( 'user_create' );
 		$view->title = 'Benutzer erstellen';
 		$view->heading = 'Benutzer erstellen';
+		$view->active = 'login';
 		$view->display ();
 	}
 	public function doCreate() {
