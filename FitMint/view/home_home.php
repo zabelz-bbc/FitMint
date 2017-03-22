@@ -14,8 +14,7 @@
 	</ol>
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
-			<img class="first-slide"
-				src="/images/logo-round-space.png"
+			<img class="first-slide" src="/images/logo-round-space.png"
 				alt="First slide">
 			<div class="container">
 				<div class="carousel-caption">
@@ -28,8 +27,7 @@
 			</div>
 		</div>
 		<div class="item">
-			<img class="second-slide"
-				src="/images/logo-round-space.png"
+			<img class="second-slide" src="/images/logo-round-space.png"
 				alt="Second slide">
 			<div class="container">
 				<div class="carousel-caption">
@@ -43,8 +41,7 @@
 			</div>
 		</div>
 		<div class="item">
-			<img class="third-slide"
-				src="/images/logo-round-space.png"
+			<img class="third-slide" src="/images/logo-round-space.png"
 				alt="Third slide">
 			<div class="container">
 				<div class="carousel-caption">
@@ -59,8 +56,7 @@
 		</div>
 
 		<div class="item">
-			<img class="third-slide"
-				src="/images/logo-round-space.png"
+			<img class="third-slide" src="/images/logo-round-space.png"
 				alt="Third slide">
 			<div class="container">
 				<div class="carousel-caption">
@@ -103,7 +99,8 @@
 	<div class="row featurette">
 		<div class="col-xs-7">
 			<h2 class="featurette-heading">
-				Diese Schuhe welche den Sommer erobern werden <span class="text-muted">Was haben sie insich?</span>
+				Diese Schuhe welche den Sommer erobern werden <span
+					class="text-muted">Was haben sie insich?</span>
 			</h2>
 			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla.
 				Vestibulum id ligula porta felis euismod semper. Praesent commodo
@@ -178,18 +175,11 @@
 				src="/images/logo-round-space.png"
 				alt="Bild konnte nicht geladen werden">
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	</div>
 
-	<hr class="featurette-divider">
+	<span class="back-to-top"> <a  style=”display: inline;” href="home">
+			<button type="button" class="btn btn-info">
+				<span class="glyphicon glyphicon-menu-up"></span>
+			</button>
+	</a>
+	</span>
