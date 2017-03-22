@@ -15,9 +15,6 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
-  
-
-
 
       <form class="form-signin1">
         <h2 class="form-signin-heading">Registrieren</h2>
