@@ -36,7 +36,7 @@ class HomeController
 	{
 		$view = new View('home_home');
 		$view->title = 'Startseite';
- 		$view->heading = '';
+//  		$view->heading = '';
  		$view->active = 'home';
 		$view->display();
 	}
@@ -47,7 +47,7 @@ class HomeController
 	
 		$view = new View ( 'home_home' );
 		$view->title = 'FitMint';
-		$view->heading = '';
+// 		$view->heading = '';
 		$view->active = 'home';
 		$view->display();
 	}
@@ -56,7 +56,7 @@ class HomeController
 	{
 		$view = new View('home_ueberUns');
 		$view->title = 'Über uns';
-		$view->heading = '';
+// 		$view->heading = '';
 		$view->active = 'ueberUns';
 		$view->display();
 	}
