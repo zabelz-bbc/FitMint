@@ -34,12 +34,11 @@ class UserController {
 		$view->active = 'login';
 		$view->display ();
 	}
-	public function create() {
-		$view = new View ( 'user_create' );
-		$view->title = 'Benutzer erstellen';
-		$view->heading = 'Benutzer erstellen';
-		$view->active = 'login';
-		$view->display ();
+
+	public function createUser() {
+		$eMail = $_POST['email'];
+		$password = $_POST['password'];
+		insert $eMail into ;
 	}
 	public function doCreate() {
 		if ($_POST ['send']) {
@@ -62,4 +61,6 @@ class UserController {
 		// Anfrage an die URI /user weiterleiten (HTTP 302)
 		header ( 'Location: /user' );
 	}
+	
+	
 }
