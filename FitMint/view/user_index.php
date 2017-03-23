@@ -17,3 +17,13 @@
 		<?php endforeach ?>
 	<?php endif ?>
 </article>
+
+
+
+
+
+for ($i = 1; $i <= 10; $i += 2 ) {
+    $data[i]
+
+$data[1]
+}
