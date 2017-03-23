@@ -12,56 +12,47 @@
 	</ol>
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
-			<img class="first-slide" src="/images/logo-round-space.png"
+			<img class="first-slide" src="/images/FarbverlaufBlau.PNG"
 				alt="First slide">
 			<div class="container">
 				<div class="carousel-caption">
-					<h1>Example headline.</h1>
-					<p>Die Neusten Schuhe für einen guten Start in den Frühling.</p>
-					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Schuhe</a>
-					</p>
+					<h1>Wilkommen auf unserer Seite</h1>
+					<p>Die neusten Trends im Bereich Sport alle auf einem Blick</p>
 				</div>
 			</div>
 		</div>
 		<div class="item">
-			<img class="second-slide" src="/images/logo-round-space.png"
-				alt="Second slide">
+			<img class="second-slide" src="/images/MixFarbe.PNG" alt="Second slide">
 			<div class="container">
 				<div class="carousel-caption">
-					<h1>Another example headline.</h1>
+					<h1>Der Frühling steht vor der Tür</h1>
 					<p>Die Neusten und trendigsten Kleider für einen fantastischen
 						Start in den Frühling.</p>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<img class="third-slide" src="/images/FarbVerlaufRot.PNG"
+				alt="Third slide">
+			<div class="container">
+				<div class="carousel-caption">
+					<h1>Viele weitere Funktionen Freischalten</h1>
+					<p>Werden Sie Mitglied und schalten Sie neue Funktionen Frei</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Kleider</a>
+						<a class="btn btn-lg btn-primary" href="#" role="button">Hier Registrieren</a>
 					</p>
 				</div>
 			</div>
 		</div>
 		<div class="item">
-			<img class="third-slide" src="/images/logo-round-space.png"
+			<img class="third-slide" src="/images/MixFarbeRot.PNG"
 				alt="Third slide">
 			<div class="container">
 				<div class="carousel-caption">
-					<h1>Viel Mehr</h1>
-					<p>Viele weitere Funktionen Freischalten mit nur einigen Clicks.</p>
+					<h1>Über Uns</h1>
+					<p>Eine kurze Geschichte über uns finden sie Hier!</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Hier
-							Registrieren</a>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="item">
-			<img class="third-slide" src="/images/logo-round-space.png"
-				alt="Third slide">
-			<div class="container">
-				<div class="carousel-caption">
-					<h1>Trendige Taschen</h1>
-					<p>Die Neusten und trendigsten sport Taschen für einen
-						fantastischen Start in den Frühling.</p>
-					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Taschen</a>
+							<a class="btn btn-lg btn-primary" href="#" role="button">Über Uns</a>
 					</p>
 				</div>
 			</div>
@@ -109,11 +100,13 @@
 		</div>
 		<div class="col-xs-5">
 			<img class="featurette-image img-responsive center-block"
-				src="/images/1.png"
-				alt="Bild konnte nicht geladen werden">
+				src="/images/1.png" alt="Bild konnte nicht geladen werden">
 		</div>
 	</div>
 	<hr class="featurette-divider">
+
+
+
 	<div class="row featurette">
 		<div class="col-xs-7 col-xs-push-5">
 			<h2 class="featurette-heading">
@@ -139,6 +132,9 @@
 		</div>
 	</div>
 	<hr class="featurette-divider">
+
+
+
 
 	<div class="row featurette">
 		<div class="col-xs-7">
@@ -172,5 +168,6 @@
 	<span class="back-to-top"> <a style=”display: inline;” href="home">
 			<button type="button" class="btn btn-info">
 				<span class="glyphicon glyphicon-menu-up"></span>
-			</button></a>
+			</button>
+	</a>
 	</span>
