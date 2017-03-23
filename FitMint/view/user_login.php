@@ -16,7 +16,7 @@
       </form>
 
 
-      <form class="form-signin1" action = "/User/doCreateUser" method = "post">
+      <form class="form-signin1" action = "/user/doCreateUser" method = "post">
         <h2 class="form-signin-heading">Registrieren</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input name = "email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>

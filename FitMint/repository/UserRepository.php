@@ -26,14 +26,15 @@ class UserRepository extends Repository {
 	 *        	
 	 * @throws Exception falls das Ausführen des Statements fehlschlägt
 	 */
+	
 	public function create($email, $password) {
 		$password = password_hash ( $password, PASSWORD_BCRYPT, array (
 				'cost' => 14 
 		) );
 		
-		$query = "INSERT INTO $this->fitmint (email, password) VALUES (?, ?)";
+		$query = "INSERT INTO {$this->fitmint} (email, passwort) VALUES (?, ?)";
 		
-		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
+		$statement = ConnectionHandler::getConnection()->prepare($query);
 		$statement->bind_param ( 'ss', $email, $password );
 		
 		if (! $statement->execute ()) {
