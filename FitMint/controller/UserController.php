@@ -35,27 +35,27 @@ class UserController {
 		$view->display ();
 	}
 
-	public function createUser() {
+	public function create() {
 		$view = new View ( 'user_create' );
 		$view->title = 'Benutzer erstellen';
 		$view->heading = 'Benutzer erstellen';
 		$view->active = 'login';
 		$view->display ();
 	}
-	public function doCreate() {
-		if ($_POST ['send']) {
-			$firstName = $_POST ['firstName'];
-			$lastName = $_POST ['lastName'];
+	
+	public function doCreateUser() {
 			$email = $_POST ['email'];
 			$password = $_POST ['password'];
 			
+			
 			$userRepository = new UserRepository ();
-			$userRepository->create ( $firstName, $lastName, $email, $password );
-		}
+			$userRepository->create ( $email, $password );
 		
 		// Anfrage an die URI /user weiterleiten (HTTP 302)
 		header ( 'Location: /user' );
+		exit();
 	}
+	
 	public function delete() {
 		$userRepository = new UserRepository ();
 		$userRepository->deleteById ( $_GET ['id'] );
@@ -63,6 +63,5 @@ class UserController {
 		// Anfrage an die URI /user weiterleiten (HTTP 302)
 		header ( 'Location: /user' );
 	}
-	
 	
 }
