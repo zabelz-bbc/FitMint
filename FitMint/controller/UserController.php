@@ -36,9 +36,11 @@ class UserController {
 	}
 
 	public function createUser() {
-		$eMail = $_POST['email'];
-		$password = $_POST['password'];
-		insert $eMail into ;
+		$view = new View ( 'user_create' );
+		$view->title = 'Benutzer erstellen';
+		$view->heading = 'Benutzer erstellen';
+		$view->active = 'login';
+		$view->display ();
 	}
 	public function doCreate() {
 		if ($_POST ['send']) {
