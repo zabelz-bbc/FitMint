@@ -11,12 +11,12 @@ class UserRepository extends Repository {
 	 * Diese Variable wird von der Klasse Repository verwendet, um generische
 	 * Funktionen zur Verfügung zu stellen.
 	 */
-	protected $tableName = 'benutzer';
+	protected $fitmint = 'benutzer';
 	
 	/**
 	 * Erstellt einen neuen benutzer mit den gegebenen Werten.
 	 *
-	 * Das Passwort wird vor dem ausführen des Queries noch mit dem SHA1
+	 * Das Passwort wird vor dem ausführen des Queries noch mit dem password_hash
 	 * Algorythmus gehashed.
 	 *
 	 * @param $email Wert
@@ -31,7 +31,7 @@ class UserRepository extends Repository {
 				'cost' => 14 
 		) );
 		
-		$query = "INSERT INTO $this->tableName (email, password) VALUES (?, ?)";
+		$query = "INSERT INTO $this->fitmint (email, password) VALUES (?, ?)";
 		
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
 		$statement->bind_param ( 'ss', $email, $password );

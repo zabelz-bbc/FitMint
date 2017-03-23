@@ -80,7 +80,7 @@ class Repository
      * gibt es diese Variabel. Diese muss in den konkreten Implementationen mit
      * dem Tabellennamen überschrieben werden. (Siehe beispiel oben).
      */
-    protected $tableName = null;
+    protected $fitmint = null;
 
     /**
      * Diese Funktion gibt den Datensatz mit der gegebenen id zurück.
@@ -94,7 +94,7 @@ class Repository
     public function readById($id)
     {
         // Query erstellen
-        $query = "SELECT * FROM {$this->tableName} WHERE id=?";
+        $query = "SELECT * FROM {$this->fitmint} WHERE id=?";
 
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
@@ -133,7 +133,7 @@ class Repository
      */
     public function readAll($max = 100)
     {
-        $query = "SELECT * FROM {$this->tableName} LIMIT 0, $max";
+        $query = "SELECT * FROM {$this->fitmint} LIMIT 0, $max";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         if ($statement){
@@ -163,7 +163,7 @@ class Repository
      */
     public function deleteById($id)
     {
-        $query = "DELETE FROM {$this->tableName} WHERE id=?";
+        $query = "DELETE FROM {$this->fitmint} WHERE id=?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('i', $id);

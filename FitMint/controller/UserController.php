@@ -47,7 +47,6 @@ class UserController {
 			$email = $_POST ['email'];
 			$password = $_POST ['password'];
 			
-			
 			$userRepository = new UserRepository ();
 			$userRepository->create ( $email, $password );
 		
@@ -62,6 +61,11 @@ class UserController {
 		
 		// Anfrage an die URI /user weiterleiten (HTTP 302)
 		header ( 'Location: /user' );
+	}
+	
+	public function logout(){
+		session_destroy();
+		$view->display();
 	}
 	
 }
