@@ -26,7 +26,6 @@ class UserRepository extends Repository {
 	 *        	
 	 * @throws Exception falls das Ausführen des Statements fehlschlägt
 	 */
-	
 	public function create($email, $password) {
 		$password = password_hash ( $password, PASSWORD_BCRYPT, array (
 				'cost' => 14 
@@ -34,7 +33,7 @@ class UserRepository extends Repository {
 		
 		$query = "INSERT INTO {$this->fitmint} (email, passwort) VALUES (?, ?)";
 		
-		$statement = ConnectionHandler::getConnection()->prepare($query);
+		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
 		$statement->bind_param ( 'ss', $email, $password );
 		
 		if (! $statement->execute ()) {
@@ -42,25 +41,25 @@ class UserRepository extends Repository {
 		}
 		return $statement->insert_id;
 	}
-	
-	public function loginToAccount($email, $password){
+	public function loginToAccount($email, $password) {
+		$query = "SELECT * FROM {$this->fitmint} WHERE email=?";
 		
-		$query = "Select password, email from fitmint.benutzer where password=? and email=?";
+		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
 		
-		$statement = ConnectionHandler::getConnection()->prepare($query);
-		$statement->bind_param ( 'ss', $email, $password );
-		
+		$statement->bind_param ( 's', $email );
 		
 		if (! $statement->execute ()) {
 			throw new Exception ( $statement->error );
-			$result = $statement->get_result();
-		
-		if ($result->num_rows == 1) {
-		
-			$row = $result->fetch_object();
-			return $row;
-		}		
+		} else {
+			$result = $statement->get_result ();
+			$row = $result->fetch_object ();
+			$dbPw = $row->passwort;
+			
+			if (password_verify ( $password, $dbPw )) {
+				return $row;
+			}
 		}
+		return null;
 	}
 }
 ?>
