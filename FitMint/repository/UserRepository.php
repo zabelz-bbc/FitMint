@@ -42,4 +42,25 @@ class UserRepository extends Repository {
 		}
 		return $statement->insert_id;
 	}
+	
+	public function loginToAccount($email, $password){
+		
+		$query = "Select password, email from fitmint.benutzer where password=? and email=?";
+		
+		$statement = ConnectionHandler::getConnection()->prepare($query);
+		$statement->bind_param ( 'ss', $email, $password );
+		
+		
+		if (! $statement->execute ()) {
+			throw new Exception ( $statement->error );
+			$result = $statement->get_result();
+		
+		if ($result->num_rows == 1) {
+		
+			$row = $result->fetch_object();
+			return $row;
+		}		
+		}
+	}
 }
+?>

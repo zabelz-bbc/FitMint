@@ -51,8 +51,28 @@ class UserController {
 			$userRepository->create ( $email, $password );
 		
 		// Anfrage an die URI /user weiterleiten (HTTP 302)
-		header ( 'Location: /home' );
+		header ('Location: /home');
 		exit();
+	}
+	
+	public function loginToAccount(){
+		$email = $_POST ['email'];
+		$password = $_POST ['password'];
+		$userRepository = new UserRepository ();
+		$row = $userRepository->loginToAccount($email, $password);
+		
+		if ($row != NULL) {
+			
+		
+		$_SESSION ['email'] ['password'] = $row->email;
+		$_SESSION ['loggedin'] = true;
+		echo "Sie sind eingellogt als: " . $_SESSION ['email'];
+		header('Location: /home');
+		exit();
+			
+	} else {
+			echo "Zugriff verweigert";
+		}
 	}
 	
 	public function delete() {
@@ -60,11 +80,12 @@ class UserController {
 		$userRepository->deleteById ( $_GET ['id'] );
 		
 		// Anfrage an die URI /user weiterleiten (HTTP 302)
-		header ( 'Location: /user' );
+		header ('Location: /user');
 	}
 	
 	public function logout(){
 		session_destroy();
+		header ('Location: /home');
 		$view->display();
 	}
 	
