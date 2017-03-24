@@ -55,6 +55,7 @@ class UserController {
 		
 		// Anfrage an die URI /user weiterleiten (HTTP 302)
 		header ( 'Location: /user' );
+		
 	}
 	public function delete() {
 		$userRepository = new UserRepository ();
