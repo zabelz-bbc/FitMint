@@ -79,6 +79,7 @@
 
 
 <div class="container marketing">
+	<hr class="featurette-divider">
 
 <?php
 for($i = 0; $i <= count ( $this->array ); $i += 2):
@@ -89,7 +90,6 @@ for($i = 0; $i <= count ( $this->array ); $i += 2):
 	?>
 	<!-- START THE FEATURETTES -->
 	<!-- <hr class="featurette-divider">-->
-	<hr class="featurette-divider">
 
 	<div class="row featurette">
 		<div class="col-xs-7">

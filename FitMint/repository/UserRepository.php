@@ -53,9 +53,9 @@ class UserRepository extends Repository {
 		} else {
 			$result = $statement->get_result ();
 			$row = $result->fetch_object ();
-			$dbPw = $row->passwort;
+			$hashedPassword = $row->passwort;
 			
-			if (password_verify ( $password, $dbPw )) {
+			if (password_verify ( $password, $hashedPassword )) {
 				return $row;
 			}
 		}
