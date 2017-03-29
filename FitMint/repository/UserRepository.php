@@ -61,5 +61,14 @@ class UserRepository extends Repository {
 		}
 		return null;
 	}
+	
+// 	public function like($vote) {
+// 		$query = "Select * FROM {$this->fitmint} where vote= ?"
+// 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
+// 		$statement->bind_param ( 'i', $vote );
+// 		if (! $statement->execute ()) {
+// 			throw new Exception ( $statement->error );
+// 		} else {
+// 	}
 }
 ?>
