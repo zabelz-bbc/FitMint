@@ -55,9 +55,22 @@ class UserRepository extends Repository {
 			$row = $result->fetch_object ();
 			$dbPw = $row->passwort;
 			
-			if (password_verify ( $password, $dbPw )) {
+			if (password_verify ( $password, $dbPw )) { //Fehler!!!!!!!
 				return $row;
 			}
+		}
+		return null;
+	}
+	
+	public function saveComment($kommentar) {
+		
+		$query = "INSERT INTO {$this->fitmint} (kommentar) VALUES (?)";
+		
+		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
+		$statement->bind_param ( 's', $kommentar );
+		
+		if (! $statement->execute ()) {
+			throw new Exception ( $statement->error );
 		}
 		return null;
 	}
