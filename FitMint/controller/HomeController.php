@@ -35,19 +35,14 @@ class HomeController {
 	 */
 	public function index() {
 		$view = new View ( 'home_home' );
-		$view->title = 'Startseite';
+		$view->title = 'FitMint';
 		$postRepository = new PostRepository ();
 		$view->array = $postRepository -> getPosts();
 		$view->active = 'home';
 		$view->display ();
 	}	
 	public function home() {
-		$view = new View ( 'home_home' );
-		$view->title = 'FitMint';
-		$postRepository = new PostRepository ();
-		$view->array = $postRepository -> getPosts();
-		$view->active = 'home';
-		$view->display ();
+		
 	}
 	public function ueberUns() {
 		$view = new View ( 'home_ueberUns' );

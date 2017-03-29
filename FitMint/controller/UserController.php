@@ -1,9 +1,7 @@
 <?php
 require_once '../repository/UserRepository.php';
+require_once '../repository/VoteRepository.php';
 
-/**
- * Siehe Dokumentation im DefaultController.
- */
 class UserController {
 	public function index() {
 		$userRepository = new UserRepository ();
@@ -26,7 +24,6 @@ class UserController {
 	}
 	public function einstellungen() {
 		$userRepository = new UserRepository ();
-		
 		$view = new View ( 'user_einstellungen' );
 		$view->title = 'Benutzer';
 		$view->heading = '';
@@ -81,10 +78,20 @@ class UserController {
 	}
 	
 	public function like() {
-		if (session == "IchBinOnline") {
-			if (like) {
+		if (isset($_SESSION["loggedin"])) {
+			$voteRepository = new VoteRepository();
+			$anzLikes = $voteRepository->getAnzLike($_POST["postId"]);
+			$voteRepository->setAnzLike($_POST["postId"], $anzLikes+1);
+			$view->display ();
+		}
+	}
 	
-			}
+	public function dislike() {
+		if (isset($_SESSION["loggedin"])) {
+			$voteRepository = new VoteRepository();
+			$anzDislikes = $voteRepository->getAnzDislike($_POST["postId"]);
+			$voteRepository->setAnzDislike($_POST["postId"], $anzDislikes+1);
+			$view->display ();
 		}
 	}
 	

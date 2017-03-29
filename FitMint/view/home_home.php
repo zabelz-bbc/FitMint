@@ -82,11 +82,14 @@
 	<hr class="featurette-divider">
 
 <?php
+require_once '../repository/VoteRepository.php';
+$VoteRepository = new VoteRepository ();
 for($i = 0; $i <= count ( $this->array ); $i += 2) :
-	$data1 = $this->array [$i];	//Bilder der Home-Seite, welche auf der linken Seite gezeigt werden.
+	$data1 = $this->array [$i]; // Bilder der Home-Seite, welche auf der linken Seite gezeigt werden.
 	$data2 = $this->array [$i + 1]; // Bilder der Home-Seite, welche auf der rechten Seite gezeigt werden.
-	if (($data1 == null) || ($data2 == null)){
-		break; }
+	if (($data1 == null) || ($data2 == null)) {
+		break;
+	}
 	?>
 	<!-- START THE FEATURETTES -->
 	<!-- <hr class="featurette-divider">-->
@@ -97,12 +100,14 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
     <?php echo $data1->getTitel(); ?> 
 			</h2>
 			<p class="lead"><?php echo $data1->getBeschreibung(); ?></p>
-			<form class="form-signin" method="post" action="/user/like"> 
-				<button type="button" class="btn btn-success" value="like">
+			<form class="form-signin" method="post" action="/user/like">
+				<button type="submit" class="btn btn-success" value="like">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
 				</button>
-				<button type="button" class="btn btn-danger" value="dislike">
-					<span class="glyphicon glyphicon-thumbs-down" ></span>
+			</form>
+			<form class="form-signin" method="post" action="/user/dislike">
+				<button type="submit" class="btn btn-danger" value="dislike">
+					<span class="glyphicon glyphicon-thumbs-down"></span>
 				</button>
 			</form>
 			<textarea placeholder="Kommentar" class="form-control Kommentar"
@@ -125,23 +130,25 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
 			</h2>
 			<p class="lead"><?php echo $data2->getBeschreibung();?></p>
 			<form class="form-signin" method="post" action="/user/like">
-				<button type="button" class="btn btn-success" value="like">
+				<button type="submit" class="btn btn-success" value="like">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
 				</button>
-				<button type="button" class="btn btn-danger" value="dislike">
+			</form>
+			<form class="form-signin" method="post" action="/user/dislike">
+				<button type="submit" class="btn btn-danger" value="dislike">
 					<span class="glyphicon glyphicon-thumbs-down"></span>
 				</button>
 			</form>
-				
-		<form action="/kommentar/doCreateComment" method="post">
-		    
-			<textarea placeholder="Kommentar" class="form-control Kommentar"
-				rows="3" name="Kommentar"></textarea>
-			<input type="hidden" name="postId" value="<?php echo $data2->getPostId(); ?>">
-			<button type="submit" class="btn btn-info">Senden</button>
-		</form>
-		
-		
+			<form action="/kommentar/doCreateComment" method="post">
+
+				<textarea placeholder="Kommentar" class="form-control Kommentar"
+					rows="3" name="Kommentar"></textarea>
+				<input type="hidden" name="postId"
+					value="<?php echo $data2->getPostId(); ?>">
+				<button type="submit" class="btn btn-info">Senden</button>
+			</form>
+
+
 		</div>
 		<div class="col-xs-5 col-xs-pull-7">
 			<img class="featurette-image img-responsive center-block"
