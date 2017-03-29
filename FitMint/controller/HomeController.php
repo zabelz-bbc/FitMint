@@ -35,8 +35,6 @@ class HomeController {
 	 * beschrieben.
 	 */
 	public function index() {
-		// TODO goto db, fetch data
-		// $view->posts = post from db
 		$view = new View ( 'home_home' );
 		$view->title = 'Startseite';
 
@@ -66,6 +64,8 @@ class HomeController {
 		$view->active = 'einstellungen';
 		$view->display ();
 	}
+
+	
 }
 
 
