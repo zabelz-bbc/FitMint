@@ -78,8 +78,8 @@ class UserController {
 		header ( 'Location: /home' );
 		$view->display ();
 	}
-	public function like() {
-		$likeButton = $_POST
-		$view->display ();
-	}
+// 	public function like() {
+// 		$likeButton = $_POST
+// 		$view->display ();
+// 	}
 }
