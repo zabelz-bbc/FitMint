@@ -4,30 +4,38 @@ require_once 'PostArray.php';
 
 class PostRepository extends Repository
 {
-	protected $tableName = 'benutzer_post';
+	protected $tableName = 'post';
 
 	 
-	public function getVote() {
+	public function getAnzLike($id) {
 
-		$sql = "SELECT vote FROM benutzer_post";
+		$sql = "SELECT anzLike FROM post where id=?";
 		$statement = ConnectionHandler::getConnection()->prepare($sql);
-
+		$statement->bind_param ( 'i', $id ); // eingrenzen was bekommen
 		if (!$statement->execute()) {
 			throw new Exception($statement->error);
 		}
 		$result = $statement -> get_result();
-		$array = array();
 		if ($result->num_rows > 0) {
-			// output data of each row
-			while($row = $result->fetch_assoc()) {// solange es noch daten hat geht es eins nach dem anderen durch in db// fetch holen
-			
-			}
-			return $array;
+			$row = $result->fetch_assoc();
+			return $row->anzLike;
 		}
-
 	}
 
-
+	public function getDislike($id) {
+	
+		$sql = "SELECT anzDislike FROM post where id=?";
+		$statement = ConnectionHandler::getConnection()->prepare($sql);
+		$statement->bind_param ( 'i', $id ); // eingrenzen was bekommen
+		if (!$statement->execute()) {
+			throw new Exception($statement->error);
+		}
+		$result = $statement -> get_result();
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+			return $row->anzDislike;
+		}
+	}
 }
 
 
