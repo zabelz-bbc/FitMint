@@ -1,6 +1,6 @@
 <?php
 require_once '../repository/UserRepository.php';
-
+require_once '../repoitory/VoteRepository.php';
 /**
  * Siehe Dokumentation im DefaultController.
  */
