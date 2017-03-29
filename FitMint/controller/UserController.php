@@ -1,6 +1,6 @@
 <?php
 require_once '../repository/UserRepository.php';
-// require_once '../repository/VoteRepository.php';
+require_once '../repository/VoteRepository.php';
 
 class UserController {
 	public function index() {
