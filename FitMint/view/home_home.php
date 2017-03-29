@@ -101,11 +101,13 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
 			</h2>
 			<p class="lead"><?php echo $data1->getBeschreibung(); ?></p>
 			<form class="form-signin" method="post" action="/user/like">
+			<input type="hidden" name="postId" value="<?php echo $data1->getPostId()?>">
 				<button type="submit" class="btn btn-success" value="like">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
 				</button>
 			</form>
 			<form class="form-signin" method="post" action="/user/dislike">
+			<input type="hidden" name="postId" value="<?php echo $data1->getPostId()?>">
 				<button type="submit" class="btn btn-danger" value="dislike">
 					<span class="glyphicon glyphicon-thumbs-down"></span>
 				</button>
@@ -130,12 +132,15 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
 			</h2>
 			<p class="lead"><?php echo $data2->getBeschreibung();?></p>
 			<form class="form-signin" method="post" action="/user/like">
+				<input type="hidden" name="postId" value="<?php echo $data2->getPostId()?>">
 				<button type="submit" class="btn btn-success" value="like">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
 				</button>
 			</form>
+						
 			<form class="form-signin" method="post" action="/user/dislike">
-				<button type="submit" class="btn btn-danger" value="dislike">
+			<input type="hidden" name="postId" value="<?php echo $data2->getPostId()?>">
+				<button type="submit" class="btn btn-danger" value="dislike" name=">
 					<span class="glyphicon glyphicon-thumbs-down"></span>
 				</button>
 			</form>
