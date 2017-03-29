@@ -82,8 +82,8 @@
 	<hr class="featurette-divider">
 
 <?php
-require_once '../repository/VoteRepository.php';
-$VoteRepository = new VoteRepository ();
+// require_once '../repository/VoteRepository.php';
+// $VoteRepository = new VoteRepository ();
 for($i = 0; $i <= count ( $this->array ); $i += 2) :
 	$data1 = $this->array [$i]; // Bilder der Home-Seite, welche auf der linken Seite gezeigt werden.
 	$data2 = $this->array [$i + 1]; // Bilder der Home-Seite, welche auf der rechten Seite gezeigt werden.
