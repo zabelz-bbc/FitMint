@@ -83,10 +83,10 @@
 
 <?php
 for($i = 0; $i <= count ( $this->array ); $i += 2) :
-	$data1 = $this->array [$i];
-	$data2 = $this->array [$i + 1];
-	if ($data1 == null) || $data2 == null)
-		break;
+	$data1 = $this->array [$i];	//Bilder der Home-Seite, welche auf der linken Seite gezeigt werden.
+	$data2 = $this->array [$i + 1]; // Bilder der Home-Seite, welche auf der rechten Seite gezeigt werden.
+	if (($data1 == null) || ($data2 == null)){
+		break; }
 	?>
 	<!-- START THE FEATURETTES -->
 	<!-- <hr class="featurette-divider">-->
