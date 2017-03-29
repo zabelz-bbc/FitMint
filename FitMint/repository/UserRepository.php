@@ -20,7 +20,7 @@ class UserRepository extends Repository {
 	 * Algorythmus gehashed.
 	 *
 	 * @param $email Wert
-	 *        	für die Spalte email
+	 *        	füsr die Spalte email
 	 * @param $password Wert
 	 *        	für die Spalte password
 	 *        	
@@ -53,13 +53,16 @@ class UserRepository extends Repository {
 		} else {
 			$result = $statement->get_result ();
 			$row = $result->fetch_object ();
-			$dbPw = $row->passwort;
-			
-			if (password_verify ( $password, $dbPw )) { //Fehler!!!!!!!
+			$hashedPassword = $row->passwort;
+
+			if (password_verify ( $password, $dbPw )) {
+
+			if (password_verify ( $password, $hashedPassword )) {
 				return $row;
 			}
 		}
 		return null;
+	}
 	}
 	
 	public function saveComment($kommentar) {
@@ -73,6 +76,14 @@ class UserRepository extends Repository {
 			throw new Exception ( $statement->error );
 		}
 		return null;
+	}
+	
+	public function selectComment() {
+		$query = "SELECT * FROM {$this->fitmint} WHERE benutzer_id=?";
+		
+		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
+		
+		$statement->bind_param ( 's', $kommentar );
 	}
 }
 ?>

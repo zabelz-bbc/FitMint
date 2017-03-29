@@ -11,8 +11,7 @@
 		id="inputPassword" class="form-control"
 		placeholder="Passwort bestätigen" required>
 	<div class="checkbox"></div>
-	<button class="btn btn-lg btn-primary btn-block" type="submit">Passwort
-		ändern</button>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Passwort ändern</button>
 </form>
 
 <div

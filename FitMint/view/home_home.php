@@ -79,9 +79,10 @@
 
 
 <div class="container marketing">
+	<hr class="featurette-divider">
 
 <?php
-for($i = 0; $i <= count ( $this->array ); $i += 2):
+for($i = 0; $i <= count ( $this->array ); $i += 2) :
 	$data1 = $this->array [$i];
 	$data2 = $this->array [$i + 1];
 	if ($data1 == null)
@@ -89,7 +90,6 @@ for($i = 0; $i <= count ( $this->array ); $i += 2):
 	?>
 	<!-- START THE FEATURETTES -->
 	<!-- <hr class="featurette-divider">-->
-	<hr class="featurette-divider">
 
 	<div class="row featurette">
 		<div class="col-xs-7">
@@ -105,10 +105,12 @@ for($i = 0; $i <= count ( $this->array ); $i += 2):
 			</button>
 			<textarea placeholder="Kommentar" class="form-control Kommentar"
 				rows="3"></textarea>
+			<button type="button" class="btn btn-info">Senden</button>
 		</div>
 		<div class="col-xs-5">
 			<img class="featurette-image img-responsive center-block"
-	src = <?php echo $data1->getBildpfad(); ?> alt="Bild konnte nicht geladen werden">
+				src=<?php echo $data1->getBildpfad(); ?>
+				alt="Bild konnte nicht geladen werden">
 		</div>
 	</div>
 	<hr class="featurette-divider">
@@ -128,10 +130,11 @@ for($i = 0; $i <= count ( $this->array ); $i += 2):
 			</button>
 			<textarea placeholder="Kommentar" class="form-control Kommentar"
 				rows="3"></textarea>
+			<button type="button" class="btn btn-info">Senden</button>
 		</div>
 		<div class="col-xs-5 col-xs-pull-7">
 			<img class="featurette-image img-responsive center-block"
-				src = <?php echo $data2->getBildpfad(); ?>
+				src=<?php echo $data2->getBildpfad(); ?>
 				alt="Bild konnte nicht geladen werden">
 		</div>
 	</div>
@@ -139,15 +142,15 @@ for($i = 0; $i <= count ( $this->array ); $i += 2):
 	
 <?php endfor;?>
 
-	</div>	
+	</div>
 
 
-	<!-- Page Up Button
+<!-- Page Up Button
     ================================================== -->
 
-	<span class="back-to-top"> <a style=”display: inline;” href="home">
-			<button type="button" class="btn btn-info">
-				<span class="glyphicon glyphicon-menu-up"></span>
-			</button>
-	</a>
-	</span>
+<span class="back-to-top"> <a style=”display: inline;” href="home">
+		<button type="button" class="btn btn-info">
+			<span class="glyphicon glyphicon-menu-up"></span>
+		</button>
+</a>
+</span>
