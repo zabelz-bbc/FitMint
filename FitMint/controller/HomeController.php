@@ -34,7 +34,7 @@ class HomeController {
 	 * beschrieben.
 	 */
 	public function index() {
-		$view = new View ( 'home_home' );
+		$view = new View ( 'home' );
 		$view->title = 'FitMint';
 		$postRepository = new PostRepository ();
 		$view->array = $postRepository -> getPosts();
@@ -42,7 +42,7 @@ class HomeController {
 		$view->display ();
 	}	
 	public function home() {
-		
+
 	}
 	public function ueberUns() {
 		$view = new View ( 'home_ueberUns' );
