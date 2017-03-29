@@ -1,31 +1,10 @@
 <?php
 require_once '../lib/Repository.php';
 
-/**
- * Das UserRepository ist zuständig für alle Zugriffe auf die Tabelle "user".
- *
- * Die Ausführliche Dokumentation zu Repositories findest du in der Repository Klasse.
- */
 class UserRepository extends Repository {
-	/**
-	 * Diese Variable wird von der Klasse Repository verwendet, um generische
-	 * Funktionen zur Verfügung zu stellen.
-	 */
+
 	protected $fitmint = 'benutzer';
 	
-	/**
-	 * Erstellt einen neuen benutzer mit den gegebenen Werten.
-	 *
-	 * Das Passwort wird vor dem ausführen des Queries noch mit dem password_hash
-	 * Algorythmus gehashed.
-	 *
-	 * @param $email Wert
-	 *        	für die Spalte email
-	 * @param $password Wert
-	 *        	für die Spalte password
-	 *        	
-	 * @throws Exception falls das Ausführen des Statements fehlschlägt
-	 */
 	public function create($email, $password) {
 		$password = password_hash ( $password, PASSWORD_BCRYPT, array (
 				'cost' => 14 
@@ -43,11 +22,8 @@ class UserRepository extends Repository {
 	}
 	public function loginToAccount($email, $password) {
 		$query = "SELECT * FROM {$this->fitmint} WHERE email=?";
-		
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
-		
 		$statement->bind_param ( 's', $email );
-		
 		if (! $statement->execute ()) {
 			throw new Exception ( $statement->error );
 		} else {
@@ -62,13 +38,5 @@ class UserRepository extends Repository {
 		return null;
 	}
 	
-// 	public function like($vote) {
-// 		$query = "Select * FROM {$this->fitmint} where vote= ?"
-// 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
-// 		$statement->bind_param ( 'i', $vote );
-// 		if (! $statement->execute ()) {
-// 			throw new Exception ( $statement->error );
-// 		} else {
-// 	}
 }
 ?>

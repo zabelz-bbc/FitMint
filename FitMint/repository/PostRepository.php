@@ -49,6 +49,7 @@ class PostRepository extends Repository
     		$postArray -> setAnzDislike($row["anzDislike"]);
     		$postArray -> setAnzLike($row["anzLike"]);
     		$postArray -> setTitel($row["titel"]);
+    		$postArray -> setTitel($row["titel"]);
     		array_push($array, $postArray);
     		}
     		return $array;
