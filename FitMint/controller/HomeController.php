@@ -62,9 +62,5 @@ class HomeController {
 		$view->active = 'einstellungen';
 		$view->display ();
 	}
-
-	
 }
-
-
 ?>
