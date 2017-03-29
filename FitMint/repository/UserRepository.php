@@ -1,18 +1,19 @@
 <?php
 require_once '../lib/Repository.php';
 
-/**
- * Das UserRepository ist zuständig für alle Zugriffe auf die Tabelle "user".
- *
- * Die Ausführliche Dokumentation zu Repositories findest du in der Repository Klasse.
- */
 class UserRepository extends Repository {
+<<<<<<< HEAD
 	/**
 	 * Diese Variable wird von der Klasse Repository verwendet, um generische
 	 * Funktionen zur Verfügung zu stellen.
 	 */
 	protected $tableName = 'benutzer';
+=======
+
+	protected $fitmint = 'benutzer';
+>>>>>>> branch 'master' of https://github.com/zabelz-bbc/FitMint.git
 	
+<<<<<<< HEAD
 	/**
 	 * Erstellt einen neuen benutzer mit den gegebenen Werten.
 	 *
@@ -26,6 +27,8 @@ class UserRepository extends Repository {
 	 *        	
 	 * @throws Exception falls das Ausführen des Statements fehlschlägt
 	 */
+=======
+>>>>>>> branch 'master' of https://github.com/zabelz-bbc/FitMint.git
 	public function create($email, $password) {
 		$password = password_hash ( $password, PASSWORD_BCRYPT, array (
 				'cost' => 14 
@@ -50,12 +53,14 @@ class UserRepository extends Repository {
 	 * @return unknown|NULL
 	 */
 	public function loginToAccount($email, $password) {
+<<<<<<< HEAD
 		$query = "SELECT * FROM {$this->tableName} WHERE email=?";
 		
+=======
+		$query = "SELECT * FROM {$this->fitmint} WHERE email=?";
+>>>>>>> branch 'master' of https://github.com/zabelz-bbc/FitMint.git
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
-		
 		$statement->bind_param ( 's', $email );
-		
 		if (! $statement->execute ()) {
 			throw new Exception ( $statement->error );
 		} else {
@@ -70,5 +75,6 @@ class UserRepository extends Repository {
 			return null;
 		}
 	}
+	
 }
 ?>

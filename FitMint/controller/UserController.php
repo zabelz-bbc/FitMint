@@ -74,11 +74,19 @@ class UserController {
 		header ( 'Location: /user' );
 	}
 	
-// 	public function logout() {
-// 		session_destroy ();
-// 		header ( 'Location: /home' );
-// 		$view->display ();
-// 	}
+	public function logout() {
+		session_destroy ();
+		header ( 'Location: /home' );
+		$view->display ();
+	}
+	
+	public function like() {
+		if (session == "IchBinOnline") {
+			if (like) {
+	
+			}
+		}
+	}
 	
 }
 ?>

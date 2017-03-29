@@ -24,6 +24,7 @@
  */
 class DefaultController
 {
+	
     /**
      * Die index Funktion des DefaultControllers sollte in jedem Projekt
      * existieren, da diese ausgeführt wird, falls die URI des Requests leer
@@ -36,10 +37,8 @@ class DefaultController
         // In diesem Fall möchten wir dem Benutzer die View mit dem Namen
         //   "default_index" rendern. Wie das genau funktioniert, ist in der
         //   View Klasse beschrieben.
-        $view = new View('home_home');
-        $view->title = 'Startseite';
-         $view->heading = '';
-        $view->active = 'home';
-        $view->display();
+        require_once 'HomeController.php';
+      $homeController = new HomeController();
+      $homeController->home();
     }
 }

@@ -85,7 +85,7 @@
 for($i = 0; $i <= count ( $this->array ); $i += 2) :
 	$data1 = $this->array [$i];
 	$data2 = $this->array [$i + 1];
-	if ($data1 == null)
+	if ($data1 == null) || $data2 == null)
 		break;
 	?>
 	<!-- START THE FEATURETTES -->
@@ -97,15 +97,17 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
     <?php echo $data1->getTitel(); ?> 
 			</h2>
 			<p class="lead"><?php echo $data1->getBeschreibung(); ?></p>
-			<button type="button" class="btn btn-success">
-				<span class="glyphicon glyphicon-thumbs-up"></span>
-			</button>
-			<button type="button" class="btn btn-danger">
-				<span class="glyphicon glyphicon-thumbs-down"></span>
-			</button>
+			<form class="form-signin" method="post" action="/user/like"> 
+				<button type="button" class="btn btn-success" value="like">
+					<span class="glyphicon glyphicon-thumbs-up"></span>
+				</button>
+				<button type="button" class="btn btn-danger" value="dislike">
+					<span class="glyphicon glyphicon-thumbs-down" ></span>
+				</button>
+			</form>
 			<textarea placeholder="Kommentar" class="form-control Kommentar"
 				rows="3"></textarea>
-			<button type="button" class="btn btn-info">Senden</button>
+			<button type="button" class="btn btn-info" type="submit">Senden</button>
 		</div>
 		<div class="col-xs-5">
 			<img class="featurette-image img-responsive center-block"
@@ -122,12 +124,14 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
     <?php echo $data2->getTitel(); ?> 
 			</h2>
 			<p class="lead"><?php echo $data2->getBeschreibung();?></p>
-			<button type="button" class="btn btn-success">
-				<span class="glyphicon glyphicon-thumbs-up"></span>
-			</button>
-			<button type="button" class="btn btn-danger">
-				<span class="glyphicon glyphicon-thumbs-down"></span>
-			</button>
+			<form class="form-signin" method="post" action="/user/like">
+				<button type="button" class="btn btn-success" value="like">
+					<span class="glyphicon glyphicon-thumbs-up"></span>
+				</button>
+				<button type="button" class="btn btn-danger" value="dislike">
+					<span class="glyphicon glyphicon-thumbs-down"></span>
+				</button>
+			</form>
 				
 		<form action="/kommentar/doCreateComment" method="post">
 		    

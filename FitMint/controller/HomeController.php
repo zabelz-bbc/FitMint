@@ -36,7 +36,6 @@ class HomeController {
 	public function index() {
 		$view = new View ( 'home_home' );
 		$view->title = 'Startseite';
-
 		$postRepository = new PostRepository ();
 		$view->array = $postRepository -> getPosts();
 		$view->active = 'home';
