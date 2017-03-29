@@ -105,7 +105,7 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
 			</button>
 			<textarea placeholder="Kommentar" class="form-control Kommentar"
 				rows="3"></textarea>
-			<button type="button" class="btn btn-info">Senden</button>
+			<button type="button" class="btn btn-info" type="submit">Senden</button>
 		</div>
 		<div class="col-xs-5">
 			<img class="featurette-image img-responsive center-block"
@@ -130,7 +130,7 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
 			</button>
 			<textarea placeholder="Kommentar" class="form-control Kommentar"
 				rows="3"></textarea>
-			<button type="button" class="btn btn-info">Senden</button>
+			<button type="button" class="btn btn-info" type="submit">Senden</button>
 		</div>
 		<div class="col-xs-5 col-xs-pull-7">
 			<img class="featurette-image img-responsive center-block"
