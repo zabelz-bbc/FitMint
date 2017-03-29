@@ -27,7 +27,7 @@
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="../js/script.js"></script>
-    
+<script src="../js/logout-popup.js"></script>   
 </head>
 <body>
 		<div class="container">
@@ -62,9 +62,9 @@
 								<ul class="nav navbar-nav">
 									<li><a href="/home/home" <?php if (strcmp('home', $active)==0) {
 										echo 'class = \'active-page\'';}?> >Home</a></li>
-										
-									<li><a href="/user/login" <?php if (strcmp('login', $active)==0) {
-										echo 'class = \'active-page\'';}?> >Logout</a></li>
+
+									<li><a href="/user/logout" onclick="<script> " > <?php if (strcmp('logout', $active)==0) {
+										echo 'class = \'active-page\'';}?> Logout</a></li>
 										
 									<li><a href="/home/ueberUns" <?php if (strcmp('ueberUns', $active)==0) {
 										echo 'class = \'active-page\'';}?> >Über Uns</a></li>
@@ -100,7 +100,7 @@
 										echo 'class = \'active-page\'';}?> >Home</a></li>
 										
 									<li><a href="/user/login" <?php if (strcmp('login', $active)==0) {
-										echo 'class = \'active-page\'';}?> >Login</a></li>
+										echo 'class = \'active-page\'';}?> >Login</a></li>					
 										
 									<li><a href="/home/ueberUns" <?php if (strcmp('ueberUns', $active)==0) {
 										echo 'class = \'active-page\'';}?> >Über Uns</a></li>
