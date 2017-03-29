@@ -73,13 +73,12 @@ class UserController {
 		$userRepository->deleteById ( $_GET ['id'] );
 		header ( 'Location: /user' );
 	}
-	public function logout() {
-		session_destroy ();
-		header ( 'Location: /home' );
-		$view->display ();
-	}
-// 	public function like() {
-// 		$likeButton = $_POST
+	
+// 	public function logout() {
+// 		session_destroy ();
+// 		header ( 'Location: /home' );
 // 		$view->display ();
 // 	}
+	
 }
+?>

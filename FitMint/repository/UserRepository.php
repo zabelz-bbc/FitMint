@@ -11,7 +11,7 @@ class UserRepository extends Repository {
 	 * Diese Variable wird von der Klasse Repository verwendet, um generische
 	 * Funktionen zur Verfügung zu stellen.
 	 */
-	protected $fitmint = 'benutzer';
+	protected $tableName = 'benutzer';
 	
 	/**
 	 * Erstellt einen neuen benutzer mit den gegebenen Werten.
@@ -31,7 +31,7 @@ class UserRepository extends Repository {
 				'cost' => 14 
 		) );
 		
-		$query = "INSERT INTO {$this->fitmint} (email, passwort) VALUES (?, ?)";
+		$query = "INSERT INTO {$this->tableName} (email, passwort) VALUES (?, ?)";
 		
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
 		$statement->bind_param ( 'ss', $email, $password );
@@ -41,8 +41,16 @@ class UserRepository extends Repository {
 		}
 		return $statement->insert_id;
 	}
+	
+	/**
+	 *
+	 * @param unknown $email        	
+	 * @param unknown $password        	
+	 * @throws Exception
+	 * @return unknown|NULL
+	 */
 	public function loginToAccount($email, $password) {
-		$query = "SELECT * FROM {$this->fitmint} WHERE email=?";
+		$query = "SELECT * FROM {$this->tableName} WHERE email=?";
 		
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
 		
@@ -54,36 +62,13 @@ class UserRepository extends Repository {
 			$result = $statement->get_result ();
 			$row = $result->fetch_object ();
 			$hashedPassword = $row->passwort;
-
-			if (password_verify ( $password, $dbPw )) {
-
+			
 			if (password_verify ( $password, $hashedPassword )) {
 				return $row;
 			}
+			
+			return null;
 		}
-		return null;
-	}
-	}
-	
-	public function saveComment($kommentar) {
-		
-		$query = "INSERT INTO {$this->fitmint} (kommentar) VALUES (?)";
-		
-		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
-		$statement->bind_param ( 's', $kommentar );
-		
-		if (! $statement->execute ()) {
-			throw new Exception ( $statement->error );
-		}
-		return null;
-	}
-	
-	public function selectComment() {
-		$query = "SELECT * FROM {$this->fitmint} WHERE benutzer_id=?";
-		
-		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
-		
-		$statement->bind_param ( 's', $kommentar );
 	}
 }
 ?>

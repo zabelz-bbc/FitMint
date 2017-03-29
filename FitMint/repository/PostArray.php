@@ -6,6 +6,15 @@ class PostArray{
 	private $titel;
 	private $anzLike;
 	private $anzDislike;
+	private $id;
+	
+	public function getPostId(){
+		return $this->id;
+	}
+	
+	public function setPostId($id){
+	   $this->id = $id;
+	}
 	
 	public function getBildpfad() {
 		return $this->bildpfad;
