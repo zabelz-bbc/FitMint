@@ -63,7 +63,7 @@
 									<li><a href="/home/home" <?php if (strcmp('home', $active)==0) {
 										echo 'class = \'active-page\'';}?> >Home</a></li>
 
-									<li><a href="/user/logout" onclick="<script> " > <?php if (strcmp('logout', $active)==0) {
+									<li><a href="/user/logout" onclick="confirmLogout()" > <?php if (strcmp('logout', $active)==0) {
 										echo 'class = \'active-page\'';}?> Logout</a></li>
 										
 									<li><a href="/home/ueberUns" <?php if (strcmp('ueberUns', $active)==0) {
@@ -116,4 +116,6 @@
 			<?php endif;?>
 			</div>
 	<div class="container"></div>
+	
+	
 

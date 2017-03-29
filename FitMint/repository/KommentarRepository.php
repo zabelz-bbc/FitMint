@@ -32,18 +32,32 @@ class KommentarRepository extends Repository {
 			throw new Exception ( $statement->error );
 		}
 		return $statement->insert_id;
-	}
-	
+	}	
 	
 	/**
 	 * todo
 	 */
-	public function selectComment() {
-		$query = "SELECT * FROM fitmint.kommentar WHERE benutzer_id=?";
+	public function selectComment($postId) {
+		$query = "SELECT inhalt FROM fitmint.kommentar WHERE postId=?";
 		
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
 		
 		$statement->bind_param ( 's', $kommentar );
+		
+		return $kommentar;
+	}
+	
+	public function changeKommentar($id, $benutzerId) {
+		$sql = "UPDATE inhalt FROM kommentar where id=?";
+		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
+		$statement->bind_param ( 'ii', $id, $benutzerId );
+		if (! $statement->execute ()) {
+			throw new Exception ( $statement->error );
+		}
+	}
+	
+	public function deleteKommentar($id, $benutzerId){
+		
 	}
 }
 ?>

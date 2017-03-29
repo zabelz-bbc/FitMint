@@ -145,7 +145,7 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
 					rows="3" name="Kommentar"></textarea>
 				<input type="hidden" name="postId"
 					value="<?php echo $data2->getPostId(); ?>">
-				<button type="submit" class="btn btn-info">Senden</button>
+				<button type="submit" class="btn btn-info">Senden</button>					
 			</form>
 
 
