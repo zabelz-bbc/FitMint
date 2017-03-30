@@ -19,7 +19,7 @@ class VoteRepository extends Repository {
 		header('Location = "home');
 	}
 	public function setAnzLike($id, $anzLike) {
-		$sql = "UPDATE anzLike FROM post where id=?";
+		$sql = "UPDATE post set anzLike=? where id=?";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
 		$statement->bind_param ( 'ii', $id, $anzLike ); // eingrenzen was bekommen
 		if (! $statement->execute ()) {
@@ -36,13 +36,13 @@ class VoteRepository extends Repository {
 		$result = $statement->get_result ();
 		if ($result->num_rows > 0) {
 			$row = $result->fetch_assoc ();
-			return $row->anzDislike;
+			return $row["anzDislike"];
 		}
 	}
 	public function setAnzDislike($id, $anzDislike) {
-		$sql = "UPDATE post set anzDislike=? FROM post where id=?";
+		$sql = "UPDATE post set anzDislike=? where id=?";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
-		$statement->bind_param ( 'ii', $id, $anzDislike ); // eingrenzen was bekommen
+		$statement->bind_param( 'ii', intval($id), $anzDislike); // eingrenzen was bekommen
 		if (! $statement->execute ()) {
 			throw new Exception ( $statement->error );
 		}

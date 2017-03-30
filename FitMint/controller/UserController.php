@@ -74,26 +74,27 @@ class UserController {
 	public function logout() {
 		session_destroy ();
 		header ( 'Location: /home' );
-		$view->display ();
+	
 	}
 	
 	public function like() {
 		if (isset($_SESSION["loggedin"])) {
 			$voteRepository = new VoteRepository();
 			$anzLikes = $voteRepository->getAnzLike($_POST["postId"]);
-			$voteRepository->setAnzLike($_POST["postId"], $anzLikes+1);
-
-			$view->display ();
+			$anzLikes["anzLike"] += 1;
+			$voteRepository->setAnzLike($_POST["postId"], $anzLikes["anzLike"]);
+ 			header ( 'Location: /home' );
 		}
 	}
 	
 	public function dislike() {
 		if (isset($_SESSION["loggedin"])) {
 			$voteRepository = new VoteRepository();
-			$anzDislikes = $voteRepository->getAnzDislike($_POST["postId"]);
-			$voteRepository->setAnzDislike($_POST["postId"], $anzDislikes+1);
-
-			$view->display ();
+			$anzDislikes = $voteRepository->getDislike($_POST["postId"]);
+			$anzDislikes["anzDislike"] += 1;
+			$voteRepository->setAnzDislike($_POST["postId"], $anzDislikes["anzDislike"]);
+			header ( 'Location: /home' );
+		
 		}
 	}
 	

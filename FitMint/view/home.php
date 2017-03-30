@@ -84,7 +84,7 @@
 <?php
 require_once '../repository/VoteRepository.php';
 $VoteRepository = new VoteRepository ();
-for($i = 0; $i <= count ( $this->array ); $i += 2) :
+for($i = 0; $i < count ( $this->array ); $i += 2) :
 	$data1 = $this->array [$i]; // Bilder der Home-Seite, welche auf der linken Seite gezeigt werden.
 	$data2 = $this->array [$i + 1]; // Bilder der Home-Seite, welche auf der rechten Seite gezeigt werden.
 	if (($data1 == null) || ($data2 == null)) {
@@ -104,11 +104,15 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
 				<button type="submit" class="btn btn-success" value="like">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
 				</button>
+				<input type="hidden" name="postId"
+					value="<?php echo $data2->getPostId(); ?>">
 			</form>
 			<form class="form-signin" method="post" action="/user/dislike">
 				<button type="submit" class="btn btn-danger" value="dislike">
 					<span class="glyphicon glyphicon-thumbs-down"></span>
 				</button>
+				<input type="hidden" name="postId"
+					value="<?php echo $data2->getPostId(); ?>">
 			</form>
 			<textarea placeholder="Kommentar" class="form-control Kommentar"
 				rows="3"></textarea>
@@ -132,12 +136,17 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
 			<form class="form-signin" method="post" action="/user/like">
 				<button type="submit" class="btn btn-success" value="like">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
+					
 				</button>
+				<input type="hidden" name="postId"
+					value="<?php echo $data2->getPostId(); ?>">
 			</form>
 			<form class="form-signin" method="post" action="/user/dislike">
 				<button type="submit" class="btn btn-danger" value="dislike">
 					<span class="glyphicon glyphicon-thumbs-down"></span>
 				</button>
+				<input type="hidden" name="postId"
+					value="<?php echo $data2->getPostId(); ?>">
 			</form>
 			<form action="/kommentar/doCreateComment" method="post">
 
