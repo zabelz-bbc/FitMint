@@ -35,7 +35,7 @@ class KommentarRepository extends Repository {
 	}	
 	
 	/**
-	 * todo
+	 * 	 * todo
 	 */
 	public function selectComment($postId) {
 		$query = "SELECT inhalt FROM fitmint.kommentar WHERE postId=?";

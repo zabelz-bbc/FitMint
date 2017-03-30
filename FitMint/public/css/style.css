@@ -144,13 +144,7 @@ SIGN IN 1 -> Login -> Registrieren*/
 	float: right;
 }
 
-/*============================================================================
-pw ändern*/
-.form-signin-einstellungen {
-	max-width: 330px;
-	padding: 15px;
-	margin: 0 auto;
-}
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -296,8 +290,18 @@ Thin out the marketing headings
 	bottom: 70px;
 	position: fixed;
 }
-/* Farbpalette in den Einstellungen
--------------------------------------------------- */
+
+/* Einstellungen
+/*============================================================================
+pw ändern*/
+.form-signin-einstellungen {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+/* --------------------------------------------------
+Farbpalette ändern  */
 #color01 {
 	text-align: center;
 	width: 404px;
@@ -307,3 +311,11 @@ Thin out the marketing headings
 	margin-left: auto;
 	margin-right: auto
 }
+
+/* --------------------------------------------------
+Kommentare ändern  */
+
+
+
+
+

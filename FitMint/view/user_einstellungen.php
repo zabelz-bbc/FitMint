@@ -28,3 +28,14 @@ var fcolorbg = "f1edda";
 	<script type="text/javascript"
 		src="http://www.seo-welten.de/tools/color/userinpalette.js"></script>
 </div>
+
+<form action="../repository/KommentarRepository/changeKommentar" method="post" id="form-change-comment">
+	<div>
+		<p>Hier können sie ihre geschriebenen Kommtenare ändern.</p>
+		<p></p>
+		<textarea rows="5" cols="40" placeholder="changed Comment"></textarea>
+		<button type="submit" class="btn btn-info">Kommentar speichern</button>
+		
+	</div>
+	
+</form>
