@@ -11,7 +11,8 @@
 		id="inputPassword" class="form-control"
 		placeholder="Passwort bestätigen" required>
 	<div class="checkbox"></div>
-	<button class="btn btn-lg btn-primary btn-block" type="submit">Passwort ändern</button>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Passwort
+		ändern</button>
 </form>
 
 <div
@@ -29,19 +30,12 @@ var fcolorbg = "f1edda";
 		src="http://www.seo-welten.de/tools/color/userinpalette.js"></script>
 </div>
 
+<form action="../repository/KommentarRepository/changeKommentar"
+	method="post" id="form-change-comment">
 
-<form action="" method="post" id="form-change-comment">
-	<?php
-	require_once '../repository/KommentarRepository.php';
-	$kommentarRepository = new KommentarRepository ();
-	$kommentar = $kommentarRepository->selectComment ( $this->postId );
-	?>
 	<div>
 		<p>Hier können sie ihre geschriebenen Kommtenare ändern.</p>
-		<p>$kommentar</p>
-		<textarea rows="5" placeholder="changed Comment"></textarea>
+		<p></p>
+
+		<textarea rows="5" cols="40" placeholder="changed Comment"></textarea>
 		<button type="submit" class="btn btn-info">Kommentar speichern</button>
-
-	</div>
-
-</form>
