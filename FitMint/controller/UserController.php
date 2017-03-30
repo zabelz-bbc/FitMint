@@ -1,7 +1,6 @@
 <?php
 require_once '../repository/UserRepository.php';
 require_once '../repository/VoteRepository.php';
-
 class UserController {
 	public function index() {
 		$userRepository = new UserRepository ();
@@ -70,33 +69,27 @@ class UserController {
 		$userRepository->deleteById ( $_GET ['id'] );
 		header ( 'Location: /user' );
 	}
-	
 	public function logout() {
 		session_destroy ();
 		header ( 'Location: /home' );
-	
 	}
-	
 	public function like() {
-		if (isset($_SESSION["loggedin"])) {
-			$voteRepository = new VoteRepository();
-			$anzLikes = $voteRepository->getAnzLike($_POST["postId"]);
-			$anzLikes["anzLike"] += 1;
-			$voteRepository->setAnzLike($_POST["postId"], $anzLikes["anzLike"]);
- 			header ( 'Location: /home' );
-		}
-	}
-	
-	public function dislike() {
-		if (isset($_SESSION["loggedin"])) {
-			$voteRepository = new VoteRepository();
-			$anzDislikes = $voteRepository->getDislike($_POST["postId"]);
-			$anzDislikes["anzDislike"] += 1;
-			$voteRepository->setAnzDislike($_POST["postId"], $anzDislikes["anzDislike"]);
+		if (isset ( $_SESSION ["loggedin"] )) {
+			$voteRepository = new VoteRepository ();
+			$anzLikes = $voteRepository->getAnzLike ( $_POST ["postId"] );
+			$anzLikes ["anzLike"] += 1;
+			$voteRepository->setAnzLike ( $_POST ["postId"], $anzLikes ["anzLike"] );
 			header ( 'Location: /home' );
-		
 		}
 	}
-	
+	public function dislike() {
+		if (isset ( $_SESSION ["loggedin"] )) {
+			$voteRepository = new VoteRepository ();
+			$anzDislikes = $voteRepository->getDislike ( $_POST ["postId"] );
+			$anzDislikes ["anzDislike"] += 1;
+			$voteRepository->setAnzDislike ( $_POST ["postId"], $anzDislikes ["anzDislike"] );
+			header ( 'Location: /home' );
+		}
+	}
 }
 ?>

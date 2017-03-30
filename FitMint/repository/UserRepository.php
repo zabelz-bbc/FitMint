@@ -1,25 +1,14 @@
 <?php
 require_once '../lib/Repository.php';
-
 class UserRepository extends Repository {
-
-	/**
-	 * Diese Variable wird von der Klasse Repository verwendet, um generische
-	 * Funktionen zur Verfügung zu stellen.
-	 */
 	protected $tableName = 'benutzer';
 	
-	/**
-	 * Erstellt einen neuen benutzer mit den gegebenen Werten.
-	 *
-	 * Das Passwort wird vor dem ausführen des Queries noch mit dem password_hash
-	 * Algorythmus gehashed.
-	 *
+	/*
 	 * @param $email Wert
-	 *        	füsr die Spalte email
+	 * füsr die Spalte email
 	 * @param $password Wert
-	 *        	für die Spalte password
-	 *        	
+	 * für die Spalte password
+	 *
 	 * @throws Exception falls das Ausführen des Statements fehlschlägt
 	 */
 	public function create($email, $password) {
@@ -46,7 +35,6 @@ class UserRepository extends Repository {
 	 * @return unknown|NULL
 	 */
 	public function loginToAccount($email, $password) {
-
 		$query = "SELECT * FROM {$this->tableName} WHERE email=?";
 		
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
@@ -65,9 +53,7 @@ class UserRepository extends Repository {
 			return null;
 		}
 	}
-	
-	public function changePassword($benutzerId, $passwort){
-		
+	public function changePassword($benutzerId, $passwort) {
 		$query = "SELECT * FROM {$this->tableName} WHERE id =?";
 		
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
@@ -78,13 +64,13 @@ class UserRepository extends Repository {
 			$result = $statement->get_result ();
 			$row = $result->fetch_object ();
 			$hashedPassword = $row->passwort;
-				
+			
 			if (password_verify ( $passwort, $hashedPassword )) {
 				
 				$passwort = password_hash ( $passwort, PASSWORD_BCRYPT, array (
-						'cost' => 14
+						'cost' => 14 
 				) );
-					
+				
 				$query = "INSERT INTO {$this->tableName} (passwort) VALUES (?)";
 				
 				$statement = ConnectionHandler::getConnection ()->prepare ( $query );
@@ -94,7 +80,6 @@ class UserRepository extends Repository {
 					throw new Exception ( $statement->error );
 				}
 			}
-
 		}
 	}
 }

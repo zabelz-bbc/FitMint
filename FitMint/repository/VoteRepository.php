@@ -3,7 +3,6 @@ require_once '../lib/Repository.php';
 require_once 'PostArray.php';
 class VoteRepository extends Repository {
 	protected $tableName = 'post';
-	
 	public function getAnzLike($id) {
 		$sql = "SELECT anzLike FROM post where id=?";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
@@ -16,7 +15,7 @@ class VoteRepository extends Repository {
 			$row = $result->fetch_assoc ();
 			return $row;
 		}
-		header('Location = "home');
+		header ( 'Location = "home' );
 	}
 	public function setAnzLike($id, $anzLike) {
 		$sql = "UPDATE post set anzLike=? where id=?";
@@ -36,13 +35,13 @@ class VoteRepository extends Repository {
 		$result = $statement->get_result ();
 		if ($result->num_rows > 0) {
 			$row = $result->fetch_assoc ();
-			return $row["anzDislike"];
+			return $row ["anzDislike"];
 		}
 	}
 	public function setAnzDislike($id, $anzDislike) {
 		$sql = "UPDATE post set anzDislike=? where id=?";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
-		$statement->bind_param( 'ii', intval($id), $anzDislike); // eingrenzen was bekommen
+		$statement->bind_param ( 'ii', intval ( $id ), $anzDislike ); // eingrenzen was bekommen
 		if (! $statement->execute ()) {
 			throw new Exception ( $statement->error );
 		}
