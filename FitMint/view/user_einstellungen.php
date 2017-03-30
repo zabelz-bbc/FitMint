@@ -1,31 +1,6 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h1>Einstellungen</h1>
-<form class="form-signin-einstellungen" method="post" action="/user/changePassword">
+<form class="form-signin-einstellungen" method="post"
+	action="/user/changePassword">
 	<h2 class="form-signin-heading">Passwort ändern</h2>
 	<label for="inputPassword" class="sr-only">Password</label> <input
 		type="password" id="inputPassword" class="form-control"
@@ -36,7 +11,8 @@
 		id="inputPassword" class="form-control"
 		placeholder="Passwort bestätigen" required>
 	<div class="checkbox"></div>
-	<button class="btn btn-lg btn-primary btn-block" type="submit">Passwort ändern</button>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Passwort
+		ändern</button>
 </form>
 
 
@@ -52,7 +28,7 @@
 	<script type="text/javascript"><!--
 var fcborder = "ffffff";
 var fcolorbg = "f1edda";
-//--></script>
+
 	<script type="text/javascript"
 		src="http://www.seo-welten.de/tools/color/userinpalette.js"></script>
 </div>
@@ -61,16 +37,17 @@ var fcolorbg = "f1edda";
 
 
 <form action="" method="post" id="form-change-comment">
-	<?php 
+	<?php
 	require_once '../repository/KommentarRepository.php';
-		$kommentarRepository = new KommentarRepository();
- 		$kommentar = $kommentarRepository->selectComment($this->postId);?>
+	$kommentarRepository = new KommentarRepository ();
+	$kommentar = $kommentarRepository->selectComment ( $this->postId );
+	?>
 	<div>
 		<p>Hier können sie ihre geschriebenen Kommtenare ändern.</p>
 		<p>$kommentar</p>
 		<textarea rows="5" cols="40" placeholder="changed Comment"></textarea>
 		<button type="submit" class="btn btn-info">Kommentar speichern</button>
-		
+
 	</div>
-	
+
 </form>

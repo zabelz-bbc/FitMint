@@ -54,7 +54,8 @@
 					<h1>Über Uns</h1>
 					<p>Eine kurze Geschichte über uns finden sie Hier!</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="../view/home_ueberUns" role="button">Über Uns</a>
+						<a class="btn btn-lg btn-primary" href="../view/home_ueberUns"
+							role="button">Über Uns</a>
 					</p>
 				</div>
 			</div>
@@ -128,16 +129,17 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
 			<button type="button" class="btn btn-danger">
 				<span class="glyphicon glyphicon-thumbs-down"></span>
 			</button>
-				
-		<form action="/kommentar/doCreateComment" method="post">
-		    
-			<textarea placeholder="Kommentar" class="form-control Kommentar"
-				rows="3" name="Kommentar"></textarea>
-			<input type="hidden" name="postId" value="<?php echo $data2->getPostId(); ?>">
-			<button type="submit" class="btn btn-info">Senden</button>
-		</form>
-		
-		
+
+			<form action="/kommentar/doCreateComment" method="post">
+
+				<textarea placeholder="Kommentar" class="form-control Kommentar"
+					rows="3" name="Kommentar"></textarea>
+				<input type="hidden" name="postId"
+					value="<?php echo $data2->getPostId(); ?>">
+				<button type="submit" class="btn btn-info">Senden</button>
+			</form>
+
+
 		</div>
 		<div class="col-xs-5 col-xs-pull-7">
 			<img class="featurette-image img-responsive center-block"
@@ -153,7 +155,7 @@ for($i = 0; $i <= count ( $this->array ); $i += 2) :
 
 
 <!-- Page Up Button -->
-<!--     ================================================== --> 
+<!--     ================================================== -->
 
 <!--  <span class="back-to-top"> <a style=”display: inline;” href="home"> -->
 <!-- 		<button type="button" class="btn btn-info"> -->

@@ -136,7 +136,7 @@ for($i = 0; $i < count ( $this->array ); $i += 2) :
 			<form class="form-signin" method="post" action="/user/like">
 				<button type="submit" class="btn btn-success" value="like">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
-					
+
 				</button>
 				<input type="hidden" name="postId"
 					value="<?php echo $data2->getPostId(); ?>">
@@ -154,7 +154,7 @@ for($i = 0; $i < count ( $this->array ); $i += 2) :
 					rows="3" name="Kommentar"></textarea>
 				<input type="hidden" name="postId"
 					value="<?php echo $data2->getPostId(); ?>">
-				<button type="submit" class="btn btn-info">Senden</button>					
+				<button type="submit" class="btn btn-info">Senden</button>
 			</form>
 
 
