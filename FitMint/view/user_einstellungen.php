@@ -9,7 +9,7 @@
 		type="password" id="inputPassword" class="form-control"
 		placeholder="neues Passwort" required> <input type="password"
 		id="inputPassword" class="form-control"
-		placeholder="Passwort bestätigen" required>
+		placeholder="neues Passwort bestätigen" required>
 	<div class="checkbox"></div>
 	<button class="btn btn-lg btn-primary btn-block" type="submit">Passwort
 		ändern</button>
@@ -38,7 +38,7 @@ var fcolorbg = "f1edda";
 		<p>Hier können sie ihre geschriebenen Kommtenare ändern.</p>
 		<p></p>
 
-		<textarea rows="5" cols="40" placeholder="changed Comment"></textarea>
+		<textarea rows="5" cols="40" placeholder="geänderter Kommentar"></textarea>
 		<button type="submit" class="btn btn-info">Kommentar speichern</button>
 		<button type="submit" class="btn btn-info">Kommentar löschen</button>
 		
