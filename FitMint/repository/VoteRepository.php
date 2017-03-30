@@ -15,7 +15,7 @@ class VoteRepository extends Repository {
 			$row = $result->fetch_assoc ();
 			return $row;
 		}
-		header ( 'Location = "home' );
+	
 	}
 	public function setAnzLike($id, $anzLike) {
 		$sql = "UPDATE post set anzLike=? where id=?";
