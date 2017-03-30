@@ -41,9 +41,7 @@ class HomeController {
 		$view->active = 'home';
 		$view->display ();
 	}	
-	public function home() {
 
-	}
 	public function ueberUns() {
 		$view = new View ( 'home_ueberUns' );
 		$view->title = 'Über uns';
