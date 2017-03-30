@@ -13,10 +13,8 @@ class KommentarRepository extends Repository {
 	 */
 	public function saveComment($benutzerId, $postId, $kommentar) {
 		$query = "INSERT INTO kommentar (benutzer_id, post_id, inhalt) VALUES (?,?,?)";
-		
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
 		$statement->bind_param ( 'iis', $benutzerId, $postId, $kommentar );
-		
 		if (! $statement->execute ()) {
 			throw new Exception ( $statement->error );
 		}
@@ -24,11 +22,8 @@ class KommentarRepository extends Repository {
 	}
 	public function selectComment($postId) {
 		$query = "SELECT inhalt FROM fitmint.kommentar WHERE postId=?";
-		
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
-		
 		$statement->bind_param ( 's', $kommentar );
-		
 		return $kommentar;
 	}
 	public function changeKommentar($id, $benutzerId) {
