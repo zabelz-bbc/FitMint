@@ -8,7 +8,7 @@ class UserController {
 		$view->title = 'Benutzer';
 		$view->heading = '';
 		$view->users = $userRepository->readAll ();
-		$view->active = 'login';
+		$view->active = 'home';
 		$view->display ();
 	}
 	public function login() {
@@ -27,7 +27,7 @@ class UserController {
 		$view->title = 'Benutzer';
 		$view->heading = '';
 		$view->users = $userRepository->readAll ();
-		$view->active = 'login';
+		$view->active = 'einstellungen';
 		$view->display ();
 	}
 	public function createUser() {

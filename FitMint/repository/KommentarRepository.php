@@ -1,6 +1,9 @@
 <?php
 require_once '../lib/Repository.php';
+
+
 class KommentarRepository extends Repository {
+
 	protected $tableName = 'kommentar';
 	
 	/**
@@ -40,6 +43,13 @@ class KommentarRepository extends Repository {
 		}
 	}
 	public function deleteKommentar($id, $benutzerId) {
+		$sql = "DELETE * FROM fitmint.kommentar WHERE id=?";
+		
+		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
+		$statement->bind_param ( 'ii', $id, $benutzerId );
+		if (! $statement->execute ()) {
+			throw new Exception ( $statement->error );
+		}
 	}
 }
 ?>

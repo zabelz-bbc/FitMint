@@ -8,5 +8,10 @@ class KommentarController {
 		header ( "Location: /" ); // Location macht eine neue Anfrage und gelangt zur index Funktion. Diese ruft die Home Seite auf.
 		exit ();
 	}
+	
+	public function doChangeComment(){
+		$kommentarRepository = new KommentarRepository();
+		$kommentarRepository->changeKommentar($id, $benutzerId);
+	}
 }
 ?>
