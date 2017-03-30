@@ -82,6 +82,7 @@ class UserController {
 			$voteRepository = new VoteRepository();
 			$anzLikes = $voteRepository->getAnzLike($_POST["postId"]);
 			$voteRepository->setAnzLike($_POST["postId"], $anzLikes+1);
+
 			$view->display ();
 		}
 	}
@@ -91,6 +92,7 @@ class UserController {
 			$voteRepository = new VoteRepository();
 			$anzDislikes = $voteRepository->getAnzDislike($_POST["postId"]);
 			$voteRepository->setAnzDislike($_POST["postId"], $anzDislikes+1);
+
 			$view->display ();
 		}
 	}
