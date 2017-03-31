@@ -78,6 +78,8 @@ SIGN IN -> Login -> Login*/
 	float: left;
 }
 
+
+
 /*============================================================================
 SIGN IN 1 -> Login -> Registrieren*/
 .form-signin1 .form-signin-heading, .form-signin .checkbox {
@@ -271,14 +273,6 @@ Thin out the marketing headings
 
 /* Einstellungen
 /*============================================================================
-pw ändern*/
-.form-signin-einstellungen {
-	max-width: 330px;
-	padding: 15px;
-	margin: 0 auto;
-}
-
-/* --------------------------------------------------
 Farbpalette ändern  */
 #color01 {
 	text-align: center;
@@ -296,7 +290,7 @@ Kommentare ändern  */
 #change-comment {
     margin: auto;
     width: 30%;
-    border: 3px solid white;
+    border: 1px #D6EEE9;
     padding: 10px;
 }
 

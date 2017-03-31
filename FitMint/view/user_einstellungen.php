@@ -2,8 +2,8 @@
 <h1>Einstellungen</h1>
 <form class="form-signin-einstellungen">
 	<h2 class="form-signin-heading">Passwort ändern</h2>
-	<label for="inputEmail" class="sr-only">Email address</label> <input
-		type="email" id="inputEmail" class="form-control"
+	<label for="inputPassword" class="sr-only">Password</label> <input
+		type="password" id="inputPassword" class="form-control"
 		placeholder="altes Passwort" required autofocus> <label
 		for="inputPassword" class="sr-only">Password</label> <input
 		type="password" id="inputPassword" class="form-control"
@@ -32,18 +32,16 @@ var fcolorbg = "f1edda";
 
 
 <div id="change-comment">
-	<form action="/kommentar/doCreateComment" method="post">
-
 	
+	<form action="/kommentar/doChangeKommentar" method="post">
 		<p>Hier können sie ihre geschriebenen Kommtenare ändern.</p>
-		<?php 
-// 		$alterKommentar = ?>
-		<p></p>
-
-		<textarea rows="5" cols="40" placeholder="geänderter Kommentar"></textarea>
-		<button type="submit" class="btn btn-info">Kommentar speichern</button>
-		<button type="submit" class="btn btn-info">Kommentar löschen</button>
 		
+		<textarea rows="5" cols="40" placeholder="geänderter Kommentar"></textarea>
+		<button type="submit" class="btn btn-info">Kommentar ändern</button>
+	</form>
+	
+	<form action="Kommentar/doDeleteKommentar" method="post">
+			<button type="submit" class="btn btn-info">Kommentar löschen</button>
 	</form>
 </div>
 <!-- Page Up Button

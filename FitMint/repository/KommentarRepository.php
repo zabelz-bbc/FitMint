@@ -29,22 +29,23 @@ class KommentarRepository extends Repository {
 		$statement->bind_param ( 's', $kommentar );
 		return $kommentar;
 	}
-	public function changeKommentar($id, $benutzerId) {
-		$sql = "UPDATE inhalt FROM kommentar where id=?";
-		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
-		$statement->bind_param ( 'ii', $id, $benutzerId );
+	public function changeKommentar($id, $inhalt) {
+		$sql = "update kommentar set inhalt=? where id=?";
+		$statement = connectionhandler::getconnection ()->prepare ( $sql );
+		$statement->bind_param ( 'is', $id, $inhalt );
 		if (! $statement->execute ()) {
-			throw new Exception ( $statement->error );
+			throw new exception ( $statement->error );
 		}
 	}
 	public function deleteKommentar($id, $benutzerId) {
 		$sql = "DELETE * FROM fitmint.kommentar WHERE id=?";
 		
 		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
-		$statement->bind_param ( 'ii', $id, $benutzerId );
+		$statement->bind_param ( 'iiis', $id,  $benutzerId, $post_id, $inhalt );
 		if (! $statement->execute ()) {
 			throw new Exception ( $statement->error );
 		}
+		
 	}
 }
 ?>

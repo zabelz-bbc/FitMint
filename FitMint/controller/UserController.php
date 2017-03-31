@@ -55,7 +55,9 @@ class UserController {
 			header ( 'Location: /home' );
 			exit ();
 		} else {
-			echo "Zugriff verweigert";
+			$view = new View ('loginFailure');
+			$view->active = 'login';
+			$view->display();
 		}
 	}
 	public function delete() {

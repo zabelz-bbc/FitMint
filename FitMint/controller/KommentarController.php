@@ -1,6 +1,7 @@
 <?php
 require_once '../repository/KommentarRepository.php';
 class KommentarController {
+	
 	public function doCreateComment() {
 		$kommentarRepository = new KommentarRepository ();
 		$kommentarRepository->saveComment ( $_SESSION ['loggedInUserId'], $_POST ["postId"], $_POST ["Kommentar"] );
@@ -9,15 +10,29 @@ class KommentarController {
 		exit ();
 	}
 	
-	public function doChangeComment(){
+	public function doChangeKommentar(){
 		$kommentarRepository = new KommentarRepository();
-		$kommentarRepository->changeKommentar($id, $benutzerId);
+		
+		$kommentarRepository->changeKommentar($_POST["id"], $inhalt);
+		
 	}
 	
-	public function doGetComment(){
+	public function doGetKommentar(){
 		$kommentarGetRepository = new KommentarRepositoryGet();
 		$kommentarGetRepository->getKommentar();
 		return $kommentarGetRepository;
+	}
+	
+	public function getPostId(){
+		$postArray = new PostArray();
+		$postArray->getPostId();
+		echo $postArray;
+		return $postArray;
+	}	
+	
+	public function doDeleteKommentar(){
+		$kommentarRepository = new KommentarRepository();
+		$kommentarRepository->deleteKommentar($id, $benutzerId);
 	}
 }
 ?>
