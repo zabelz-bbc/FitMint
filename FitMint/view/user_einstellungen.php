@@ -32,10 +32,12 @@ var fcolorbg = "f1edda";
 
 
 <div id="change-comment">
-	<form action="/kommentarController/doCreateComment" method="post">
+	<form action="/kommentar/doCreateComment" method="post">
 
 	
 		<p>Hier können sie ihre geschriebenen Kommtenare ändern.</p>
+		<?php 
+// 		$alterKommentar = ?>
 		<p></p>
 
 		<textarea rows="5" cols="40" placeholder="geänderter Kommentar"></textarea>
@@ -44,3 +46,12 @@ var fcolorbg = "f1edda";
 		
 	</form>
 </div>
+<!-- Page Up Button
+    ================================================== -->
+
+<span class="back-to-top"> <a style=”display: inline;” href="einstellungen">
+		<button type="button" class="btn btn-info">
+			<span class="glyphicon glyphicon-menu-up"></span>
+		</button>
+</a>
+</span>

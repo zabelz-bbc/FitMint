@@ -1,8 +1,10 @@
 <?php
 require_once '../lib/Repository.php';
 require_once 'KommentarArrayLara.php';
-class KommentarRepositoryLara extends Repository {
+class KommentarRepositoryGet extends Repository {
+	
 	protected $tableName = 'kommentar';
+	
 	public function getKommentar() {
 		$sql = "SELECT * FROM {$this->tableName}";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
