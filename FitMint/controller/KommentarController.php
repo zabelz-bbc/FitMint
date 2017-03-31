@@ -13,5 +13,11 @@ class KommentarController {
 		$kommentarRepository = new KommentarRepository();
 		$kommentarRepository->changeKommentar($id, $benutzerId);
 	}
+	
+	public function doGetComment(){
+		$kommentarGetRepository = new KommentarRepositoryGet();
+		$kommentarGetRepository->getKommentar();
+		return $kommentarGetRepository;
+	}
 }
 ?>

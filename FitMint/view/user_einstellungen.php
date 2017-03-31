@@ -9,7 +9,7 @@
 		type="password" id="inputPassword" class="form-control"
 		placeholder="neues Passwort" required> <input type="password"
 		id="inputPassword" class="form-control"
-		placeholder="Passwort bestätigen" required>
+		placeholder="neues Passwort bestätigen" required>
 	<div class="checkbox"></div>
 	<button class="btn btn-lg btn-primary btn-block" type="submit">Passwort
 		ändern</button>
@@ -32,15 +32,26 @@ var fcolorbg = "f1edda";
 
 
 <div id="change-comment">
-	<form action="/kommentarController/doCreateComment" method="post">
+	<form action="/kommentar/doCreateComment" method="post">
 
 	
 		<p>Hier können sie ihre geschriebenen Kommtenare ändern.</p>
+		<?php 
+// 		$alterKommentar = ?>
 		<p></p>
 
-		<textarea rows="5" cols="40" placeholder="changed Comment"></textarea>
+		<textarea rows="5" cols="40" placeholder="geänderter Kommentar"></textarea>
 		<button type="submit" class="btn btn-info">Kommentar speichern</button>
 		<button type="submit" class="btn btn-info">Kommentar löschen</button>
 		
 	</form>
 </div>
+<!-- Page Up Button
+    ================================================== -->
+
+<span class="back-to-top"> <a style=”display: inline;” href="einstellungen">
+		<button type="button" class="btn btn-info">
+			<span class="glyphicon glyphicon-menu-up"></span>
+		</button>
+</a>
+</span>

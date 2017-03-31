@@ -30,13 +30,6 @@ class UserController {
 		$view->active = 'einstellungen';
 		$view->display ();
 	}
-	public function createUser() {
-		$view = new View ( 'user_create' );
-		$view->title = 'Benutzer erstellen';
-		$view->heading = 'Benutzer erstellen';
-		$view->active = 'login';
-		$view->display ();
-	}
 	public function doCreateUser() {
 		$email = $_POST ['email'];
 		$password = $_POST ['password'];
@@ -44,6 +37,7 @@ class UserController {
 		$userRepository = new UserRepository ();
 		$userRepository->create ( $email, $password );
 		header ( 'Location: /home' );
+		$this->loginToAccount ();
 		exit ();
 	}
 	public function loginToAccount() {

@@ -39,22 +39,18 @@
 				<div class="carousel-caption">
 					<h1>Viele weitere Funktionen Freischalten</h1>
 					<p>Werden Sie Mitglied und schalten Sie neue Funktionen Frei</p>
-					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Hier
-							Registrieren</a>
-					</p>
 				</div>
 			</div>
 		</div>
 		<div class="item">
 			<img class="third-slide" src="/images/MixFarbeRot.PNG"
-				alt="Third slide">
+				alt=Fourth slide>
 			<div class="container">
 				<div class="carousel-caption">
 					<h1>Über Uns</h1>
 					<p>Eine kurze Geschichte über uns finden sie Hier!</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Über Uns</a>
+						<a class="btn btn-lg btn-primary" href="/home/ueberUns" role="button">Über Uns</a>
 					</p>
 				</div>
 			</div>
