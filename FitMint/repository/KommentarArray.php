@@ -1,22 +1,15 @@
 <?php
-class PostArray {
+class KommentarArray {
 	private $id;
-	private $benutzer_id;
 	private $post_id;
 	private $inhalt;
+	private $email;	
 	
 	public function getId() {
 		return $this->id;
 	}
 	public function setId($id) {
 		$this->id = $id;
-	}
-	
-	public function getBenutzer_id() {
-		return $this->benutzer_id;
-	}
-	public function setBenutzer_id($benutzer_id) {
-		$this->benutzer_id = $benutzer_id;
 	}
 	
 	public function getPost_id() {
@@ -32,6 +25,14 @@ class PostArray {
 	public function setInhalt($inhalt) {
 		$this->inhalt = $inhalt;
 	}
+	
+	public function getEmail() {
+		return $this->email;
+	}
+	public function setEmail($email) {
+		$this->email = $email;
+	}
+
 }
 
 ?>

@@ -79,14 +79,18 @@
 	<hr class="featurette-divider">
 
 <?php
-require_once '../repository/VoteRepository.php';
-$VoteRepository = new VoteRepository ();
-for($i = 0; $i < count ( $this->array ); $i += 2) :
-	$data1 = $this->array [$i]; // Bilder der Home-Seite, welche auf der linken Seite gezeigt werden.
-	$data2 = $this->array [$i + 1]; // Bilder der Home-Seite, welche auf der rechten Seite gezeigt werden.
+for($i = 0; $i < count ( $postArray ); $i += 2) :
+	$data1 = $postArray [$i]; // Bilder der Home-Seite, welche auf der linken Seite gezeigt werden.
+	$data2 = $postArray [$i + 1]; // Bilder der Home-Seite, welche auf der rechten Seite gezeigt werden.
+	
 	if (($data1 == null) || ($data2 == null)) {
 		break;
 	}
+?>
+<?php
+for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
+	$data3 = $kommentarArray [$j];
+	$data4 = $kommentarArray [$j + 1];
 	?>
        <!-- START THE FEATURETTES -->
 	<!-- <hr class="featurette-divider">-->
@@ -97,29 +101,35 @@ for($i = 0; $i < count ( $this->array ); $i += 2) :
     <?php echo $data1->getTitel(); ?> 
                     </h2>
 			<p class="lead"><?php echo $data1->getBeschreibung(); ?></p>
-
 			<form class="form-signin" method="post" action="/user/like">
 				<button type="submit" class="btn btn-success" value="like">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
 				</button>
 				<input type="hidden" name="postId"
-					value="<?php echo $data2->getPostId(); ?>">
+					value="<?php echo $data1->getPostId(); ?>">
 			</form>
 			<form class="form-signin" method="post" action="/user/dislike">
 				<button type="submit" class="btn btn-danger" value="dislike">
 					<span class="glyphicon glyphicon-thumbs-down"></span>
 				</button>
 				<input type="hidden" name="postId"
-					value="<?php echo $data2->getPostId(); ?>">
+					value="<?php echo $data1->getPostId(); ?>">
 			</form>
-
 			<form action="/kommentar/doCreateComment" method="post">
+
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
 					rows="3" name="Kommentar"></textarea>
-				<input type="hidden" name="postId"
-					value="<?php echo $data2->getPostId(); ?>">
+				<input type="hidden" name=$data1
+					value="<?php echo $data1->getPostId(); ?>">
 				<button type="submit" class="btn btn-info">Senden</button>
 			</form>
+			<div>
+			<?php for($k = 0; $k < count ( $data3); $k += 1) { 
+			        echo $data3[$k]-> getEmail();
+			        echo $data3[$k]-> getInhalt();
+                  }
+             ?>
+             </div>
 		</div>
 		<div class="col-xs-5">
 			<img class="featurette-image img-responsive center-block"
@@ -128,8 +138,6 @@ for($i = 0; $i < count ( $this->array ); $i += 2) :
 		</div>
 	</div>
 	<hr class="featurette-divider">
-
-
 	<div class="row featurette">
 		<div class="col-xs-7 col-xs-push-5">
 			<h2 class="featurette-heading">
@@ -151,16 +159,21 @@ for($i = 0; $i < count ( $this->array ); $i += 2) :
 				<input type="hidden" name="postId"
 					value="<?php echo $data2->getPostId(); ?>">
 			</form>
-
 			<form action="/kommentar/doCreateComment" method="post">
+
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
 					rows="3" name="Kommentar"></textarea>
 				<input type="hidden" name="postId"
 					value="<?php echo $data2->getPostId(); ?>">
 				<button type="submit" class="btn btn-info">Senden</button>
 			</form>
-
-
+			<div>
+			<?php for($l = 0; $l < count ( $data4); $l += 1) { 
+			        echo $data4[$l]-> getEmail();
+			        echo $data4[$l]-> getInhalt();
+                  }
+             ?>
+             </div>
 		</div>
 		<div class="col-xs-5 col-xs-pull-7">
 			<img class="featurette-image img-responsive center-block"
@@ -169,10 +182,9 @@ for($i = 0; $i < count ( $this->array ); $i += 2) :
 		</div>
 	</div>
 	<hr class="featurette-divider">
-       
-<?php endfor;?>
+<?php endfor; endfor; ?>
 
-</div>
+       </div>
 
 
 <!-- Page Up Button
