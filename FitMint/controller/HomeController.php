@@ -1,12 +1,26 @@
 <?php
 require_once '../repository/PostRepository.php';
+require_once '../repository/KommentarRepositoryGet.php';
+require_once '../repository/VoteRepository.php';
 class HomeController {
 	public function index() {
 		$view = new View ( 'home' );
 		$view->title = 'FitMint';
-		$postRepository = new PostRepository ();
-		$view->array = $postRepository->getPosts ();
 		$view->active = 'home';
+		
+		$postRepository = new PostRepository ();
+		$postArray = $postRepository->getPosts ();
+		$kommentarArray = array ();
+		
+		foreach ( $postArray as $pa ) {
+			$kommentarRepository = new KommentarRepositoryGet ();
+			$postComments = $kommentarRepository->getKommentarbyId ( $pa->getPostId () );
+			array_push ( $kommentarArray, $postComments );
+		}
+		
+		$view->postArray = $postArray;
+		$view->kommentarArray = $kommentarArray;
+		
 		$view->display ();
 	}
 	public function ueberUns() {
