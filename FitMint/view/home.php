@@ -91,6 +91,14 @@ for($i = 0; $i < count ( $this->array ); $i += 2) :
 		break;
 	}
 	?>
+	<?php 
+	require_once '../repository/KommentarRepositoryZoe.php';
+	$KommentarRepository = new KommentarRepositoryZoe();
+	for($i = 0; $i < count ( $this->array ); $i += 1) :
+	$data3 = $this->array[$i];
+	if (($data3 == null)){
+	}
+	?>
 	<!-- START THE FEATURETTES -->
 	<!-- <hr class="featurette-divider">-->
 
@@ -116,7 +124,8 @@ for($i = 0; $i < count ( $this->array ); $i += 2) :
 			</form>
 			<textarea placeholder="Kommentar" class="form-control Kommentar"
 				rows="3"></textarea>
-			<button type="button" class="btn btn-info" type="submit">Senden</button>
+			<button type="button" style="margin-top: 10px" class="btn btn-info"
+				type="submit">Senden</button>
 		</div>
 		<div class="col-xs-5">
 			<img class="featurette-image img-responsive center-block"
@@ -149,13 +158,13 @@ for($i = 0; $i < count ( $this->array ); $i += 2) :
 					value="<?php echo $data2->getPostId(); ?>">
 			</form>
 			<form action="/kommentar/doCreateComment" method="post">
-
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
 					rows="3" name="Kommentar"></textarea>
 				<input type="hidden" name="postId"
 					value="<?php echo $data2->getPostId(); ?>">
-				<button type="submit" class="btn btn-info">Senden</button>
+				<button type="submit" style="margin-top: 10px" class="btn btn-info">Senden</button>
 			</form>
+
 
 
 		</div>
@@ -164,6 +173,9 @@ for($i = 0; $i < count ( $this->array ); $i += 2) :
 				src=<?php echo $data2->getBildpfad(); ?>
 				alt="Bild konnte nicht geladen werden">
 		</div>
+		<div>
+			 <?php echo $data3->getInhalt(); ?>
+			</div>
 	</div>
 	<hr class="featurette-divider">
 	
@@ -176,8 +188,8 @@ for($i = 0; $i < count ( $this->array ); $i += 2) :
     ================================================== -->
 
 <span class="back-to-top"> <a style=”display: inline;” href="home">
-		<button type="button" class="btn btn-info">
-			<span class="glyphicon glyphicon-menu-up"></span>
-		</button>
+             <button type="button" class="btn btn-info">
+                    <span class="glyphicon glyphicon-menu-up"></span>
+             </button>
 </a>
 </span>
