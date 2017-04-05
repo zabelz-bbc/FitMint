@@ -47,5 +47,6 @@ class KommentarRepository extends Repository {
 		}
 		
 	}
+
 }
 ?>

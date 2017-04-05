@@ -1,6 +1,6 @@
 <div>
 	<h1>Über uns</h1>
-	<a href="home"><img id="logo" src="../images/logo-round-space.png" /></a>;
+	<a href="home/home"><img id="logo" src="../images/logo-round-space.png" /></a>;
 
 	<h3>Willkommen auf FitMint!</h3>
 	<br>

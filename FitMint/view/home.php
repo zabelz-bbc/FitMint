@@ -166,6 +166,7 @@ for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
 					rows="3" name="Kommentar"></textarea>
 				<input type="hidden" name="postId"
+				
 					value="<?php echo $data2->getPostId(); ?>">
 				<button type="submit" class="btn btn-info">Senden</button>
 			</form>
