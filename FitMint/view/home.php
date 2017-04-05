@@ -115,19 +115,21 @@ for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
 				<input type="hidden" name="postId"
 					value="<?php echo $data1->getPostId(); ?>">
 			</form>
+			
 			<form action="/kommentar/doCreateComment" method="post">
-
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
 					rows="3" name="Kommentar"></textarea>
-				<input type="hidden" name=$data1
+				<input type="hidden" name=postId
 					value="<?php echo $data1->getPostId(); ?>">
 				<button type="submit" class="btn btn-info">Senden</button>
 			</form>
+				
 			<div>
 			<?php for($k = 0; $k < count ( $data3); $k += 1) { 
 			        echo $data3[$k]-> getEmail();
 			        echo $data3[$k]-> getInhalt();
-                  }
+            		echo "<br>";      
+			}
              ?>
              </div>
 		</div>
@@ -159,8 +161,8 @@ for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
 				<input type="hidden" name="postId"
 					value="<?php echo $data2->getPostId(); ?>">
 			</form>
+			
 			<form action="/kommentar/doCreateComment" method="post">
-
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
 					rows="3" name="Kommentar"></textarea>
 				<input type="hidden" name="postId"
@@ -168,9 +170,11 @@ for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
 				<button type="submit" class="btn btn-info">Senden</button>
 			</form>
 			<div>
+			
 			<?php for($l = 0; $l < count ( $data4); $l += 1) { 
 			        echo $data4[$l]-> getEmail();
 			        echo $data4[$l]-> getInhalt();
+			        echo "<br>";
                   }
              ?>
              </div>
