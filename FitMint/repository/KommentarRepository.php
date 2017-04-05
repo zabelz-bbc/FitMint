@@ -73,7 +73,7 @@ class KommentarRepository extends Repository {
 		}
 	}
 	
-	public function getKommentarbyId($post_id) {
+	public function getKommentarbyPostId($post_id) {
 		$sql = "SELECT * FROM {$this->tableName} join fitmint.benutzer on benutzer.id = kommentar.benutzer_id where post_id=?";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
 		$statement->bind_param ( 'i', $post_id ); // eingrenzen was bekommen

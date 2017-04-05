@@ -14,7 +14,7 @@ class HomeController {
 		
 		foreach ( $postArray as $pa ) {
 			$kommentarRepository = new KommentarRepository ();
-			$postComments = $kommentarRepository->getKommentarbyId ( $pa->getPostId () );
+			$postComments = $kommentarRepository->getKommentarbyPostId ( $pa->getPostId () );
 			array_push ( $kommentarArray, $postComments );
 		}
 		
