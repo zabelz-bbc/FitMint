@@ -3,7 +3,8 @@ class KommentarArray {
 	private $id;
 	private $post_id;
 	private $inhalt;
-	private $email;	
+	private $email;
+	private $benutzer_id;
 	
 	public function getId() {
 		return $this->id;
@@ -31,6 +32,13 @@ class KommentarArray {
 	}
 	public function setEmail($email) {
 		$this->email = $email;
+	}
+	
+	public function getBenutzer_id() {
+		return $this->benutzer_id;
+	}
+	public function setBenutzer_id($benutzer_id) {
+		$this->benutzer_id = $benutzer_id;
 	}
 
 }
