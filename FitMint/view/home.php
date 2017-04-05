@@ -118,7 +118,7 @@ for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
 			
 			<form action="/kommentar/doCreateComment" method="post">
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
-					rows="3" name="Kommentar"></textarea>
+					rows="5" name="Kommentar"></textarea>
 				<input type="hidden" name=postId
 					value="<?php echo $data1->getPostId(); ?>">
 				<button type="submit" class="btn btn-info">Senden</button>
@@ -164,7 +164,7 @@ for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
 			
 			<form action="/kommentar/doCreateComment" method="post">
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
-					rows="3" name="Kommentar"></textarea>
+					rows="5" name="Kommentar"></textarea>
 				<input type="hidden" name="postId"
 					value="<?php echo $data2->getPostId(); ?>">
 				<button type="submit" class="btn btn-info">Senden</button>

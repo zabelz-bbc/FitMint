@@ -23,7 +23,7 @@ h3 {
 }
 
 #logo {
-	margin-left: 39%;
+	margin-left: 200px;
 }
 
 #textÜberuns {
@@ -259,9 +259,6 @@ Thin out the marketing headings
 	.lead {
 		font-size: 10pt;
 	}
-	.btn btn-success {
-		
-	}
 }
 /* Page Up Button
 -------------------------------------------------- */
@@ -287,7 +284,7 @@ Farbpalette ändern  */
 /* --------------------------------------------------
 Kommentare ändern  */
 
-#change-comment {
+#change-Comment {
     margin: auto;
     width: 30%;
     border: 1px #D6EEE9;
