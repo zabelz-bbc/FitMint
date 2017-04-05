@@ -86,12 +86,11 @@ for($i = 0; $i < count ( $postArray ); $i += 2) :
 	if (($data1 == null) || ($data2 == null)) {
 		break;
 	}
-?>
-<?php
-for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
-	$data3 = $kommentarArray [$j];
-	$data4 = $kommentarArray [$j + 1];
 	?>
+<?php
+	for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
+		$data3 = $kommentarArray [$j];
+		$data4 = $kommentarArray [$j + 1]; ?>
        <!-- START THE FEATURETTES -->
 	<!-- <hr class="featurette-divider">-->
 
@@ -101,6 +100,9 @@ for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
     <?php echo $data1->getTitel(); ?> 
                     </h2>
 			<p class="lead"><?php echo $data1->getBeschreibung(); ?></p>
+				<h3>Kommentare:</h3>
+<?php if(isset ($_SESSION['loggedin'])): ?>
+	
 			<form class="form-signin" method="post" action="/user/like">
 				<button type="submit" class="btn btn-success" value="like">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
@@ -115,22 +117,27 @@ for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
 				<input type="hidden" name="postId"
 					value="<?php echo $data1->getPostId(); ?>">
 			</form>
-			
+
 			<form action="/kommentar/doCreateComment" method="post">
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
-					rows="3" name="Kommentar"></textarea>
+					rows="5" name="Kommentar"></textarea>
 				<input type="hidden" name=postId
 					value="<?php echo $data1->getPostId(); ?>">
 				<button type="submit" class="btn btn-info">Senden</button>
 			</form>
-				
+			
+<?php endif;?>
 			<div>
-			<?php for($k = 0; $k < count ( $data3); $k += 1) { 
-			        echo $data3[$k]-> getEmail();
-			        echo $data3[$k]-> getInhalt();
-            		echo "<br>";      
-			}
-             ?>
+			
+			
+			<?php
+		
+		for($k = 0; $k < count ( $data3 ); $k += 1) {
+			echo $data3 [$k]->getEmail ();
+			echo $data3 [$k]->getInhalt ();
+			echo "<br>";
+		}
+		?>
              </div>
 		</div>
 		<div class="col-xs-5">
@@ -143,9 +150,10 @@ for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
 	<div class="row featurette">
 		<div class="col-xs-7 col-xs-push-5">
 			<h2 class="featurette-heading">
-    <?php echo $data2->getTitel(); ?> 
-                    </h2>
+    <?php echo $data2->getTitel(); ?> </h2>
 			<p class="lead"><?php echo $data2->getBeschreibung();?></p>
+			<h3>Kommentare:</h3>
+			  <?php if(isset ($_SESSION['loggedin'])): ?>
 			<form class="form-signin" method="post" action="/user/like">
 				<button type="submit" class="btn btn-success" value="like">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
@@ -161,22 +169,25 @@ for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
 				<input type="hidden" name="postId"
 					value="<?php echo $data2->getPostId(); ?>">
 			</form>
-			
+
 			<form action="/kommentar/doCreateComment" method="post">
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
-					rows="3" name="Kommentar"></textarea>
+					rows="5" name="Kommentar"></textarea>
 				<input type="hidden" name="postId"
 					value="<?php echo $data2->getPostId(); ?>">
 				<button type="submit" class="btn btn-info">Senden</button>
 			</form>
+			<?php endif;?>
 			<div>
 			
-			<?php for($l = 0; $l < count ( $data4); $l += 1) { 
-			        echo $data4[$l]-> getEmail();
-			        echo $data4[$l]-> getInhalt();
-			        echo "<br>";
-                  }
-             ?>
+			<?php
+		
+		for($l = 0; $l < count ( $data4 ); $l += 1) {
+			echo $data4 [$l]->getEmail ();
+			echo $data4 [$l]->getInhalt ();
+			echo "<br>";
+		}
+		?>
              </div>
 		</div>
 		<div class="col-xs-5 col-xs-pull-7">
