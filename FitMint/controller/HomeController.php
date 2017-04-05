@@ -1,6 +1,6 @@
 <?php
 require_once '../repository/PostRepository.php';
-require_once '../repository/KommentarRepositoryGet.php';
+require_once '../repository/KommentarRepository.php';
 require_once '../repository/VoteRepository.php';
 class HomeController {
 	public function index() {
@@ -13,7 +13,7 @@ class HomeController {
 		$kommentarArray = array ();
 		
 		foreach ( $postArray as $pa ) {
-			$kommentarRepository = new KommentarRepositoryGet ();
+			$kommentarRepository = new KommentarRepository ();
 			$postComments = $kommentarRepository->getKommentarbyId ( $pa->getPostId () );
 			array_push ( $kommentarArray, $postComments );
 		}
