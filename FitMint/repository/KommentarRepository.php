@@ -38,7 +38,9 @@ class KommentarRepository extends Repository {
 		$row = $result->fetch_assoc ();
 		return $row ["benutzerId"];
 	}
-	public function changeKommentar($id, $inhalt) {
+	
+	
+	public function editKommentar($id, $inhalt) {
 		$sql = "update kommentar set inhalt=? where id=?";
 		$statement = Connectionhandler::getConnection ()->prepare ( $sql );
 		$statement->bind_param ( 'is', $id, $inhalt );
@@ -46,6 +48,8 @@ class KommentarRepository extends Repository {
 			throw new exception ( $statement->error );
 		}
 	}
+	
+	
 	public function deleteKommentarById($id) {
 		$sql = "DELETE FROM {$this->tableName} WHERE id=?";
 		

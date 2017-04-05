@@ -131,11 +131,13 @@ for($i = 0; $i < count ( $postArray ); $i += 2) :
 			<?php
 		for($k = 0; $k < count ( $data3 ); $k += 1) {
 			echo "<br>";
+			
 			echo $data3 [$k]->getEmail ();
 		
 			echo $data3 [$k]->getInhalt ();
-			if ($data3 [$k]->getBenutzer_id () == $_SESSION ['loggedInUserId']) {
-				echo '<a href="/kommentar/doDeleteKommentar?kommentarId=' . $data3 [$k]->getId () . '&benutzerId=' . $data3 [$k]->getBenutzer_id () . '">  --> delete</a>';
+			if (isset($_SESSION['loggedInUserId']) && $data3 [$k]->getBenutzer_id () == $_SESSION ['loggedInUserId']) {
+				echo '<a href="/kommentar/doDeleteKommentar?kommentarId=' . $data3 [$k]->getId () . '&benutzerId=' . $data3 [$k]->getBenutzer_id () . '"<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>';
+				echo '<a href="/kommentar/doEditKommentar?kommentarId=' . $data3 [$k]->getId () . '&benutzerId=' . $data3 [$k]->getBenutzer_id () . '"<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>';				
 			}
 			echo "<br>";
 			}
@@ -192,8 +194,9 @@ for($i = 0; $i < count ( $postArray ); $i += 2) :
 			echo $data4 [$l]->getInhalt ();
 			
 			// 
-			if ($data4 [$l]->getBenutzer_id () == $_SESSION ['loggedInUserId']) {
-				echo '<a href="/kommentar/doDeleteKommentar?kommentarId=' . $data4 [$l]->getId () . '&benutzerId=' . $data4 [$l]->getBenutzer_id () . '">  --> delete</a>';
+			if (isset($_SESSION['loggedInUserId']) && $data4 [$l]->getBenutzer_id () == $_SESSION ['loggedInUserId']) {
+				echo '<a href="/kommentar/doDeleteKommentar?kommentarId=' . $data4 [$l]->getId () . '&benutzerId=' . $data4 [$l]->getBenutzer_id () . '"<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>';
+				echo '<a href="/kommentar/doEditKommentar?kommentarId=' . $data4 [$l]->getId () . '&benutzerId=' . $data4 [$l]->getBenutzer_id () . '"<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>';
 			}
 			echo "<br>";
 		}
