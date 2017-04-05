@@ -120,7 +120,7 @@ for($i = 0; $i < count ( $postArray ); $i += 2) :
 
 			<form action="/kommentar/doCreateComment" method="post">
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
-					rows="5" name="Kommentar"></textarea>
+					rows="5" name="Kommentar" required autofocus></textarea>
 				<input type="hidden" name=postId
 					value="<?php echo $data1->getPostId(); ?>">
 				<button type="submit" class="btn btn-info">Senden</button>
@@ -172,13 +172,15 @@ for($i = 0; $i < count ( $postArray ); $i += 2) :
 
 			<form action="/kommentar/doCreateComment" method="post">
 				<textarea placeholder="Kommentar" class="form-control Kommentar"
-					rows="5" name="Kommentar"></textarea>
+					rows="5" name="Kommentar" required autofocus></textarea>
 				<input type="hidden" name="postId"
 					value="<?php echo $data2->getPostId(); ?>">
 				<button type="submit" class="btn btn-info">Senden</button>
 			</form>
 			<?php endif;?>
 			<div>
+			
+			<a href="/kommentar/doDelete">delete</a>
 			
 			<?php
 		

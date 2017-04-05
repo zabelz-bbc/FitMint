@@ -32,21 +32,20 @@ class KommentarRepository extends Repository {
 	}
 	public function changeKommentar($id, $inhalt) {
 		$sql = "update kommentar set inhalt=? where id=?";
-		$statement = connectionhandler::getconnection ()->prepare ( $sql );
+		$statement = Connectionhandler::getConnection ()->prepare ( $sql );
 		$statement->bind_param ( 'is', $id, $inhalt );
 		if (! $statement->execute ()) {
 			throw new exception ( $statement->error );
 		}
 	}
-	public function deleteKommentar($id, $benutzerId) {
-		$sql = "DELETE * FROM fitmint.kommentar WHERE id=?";
+	public function deleteKommentar($id) {
+		$sql = "DELETE FROM fitmint.kommentar WHERE id=?";
 		
 		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
-		$statement->bind_param ( 'iiis', $id,  $benutzerId, $post_id, $inhalt );
+		$statement->bind_param ( 'i', $id );
 		if (! $statement->execute ()) {
 			throw new Exception ( $statement->error );
-		}
-		
+		}	
 	}
 	
 	public function getKommentar() {
@@ -95,6 +94,29 @@ class KommentarRepository extends Repository {
 			return $array;
 		}
 	}
-
+	
+	
+	public function getKommentarbyBenutzerId($benutzer_id) {
+		$sql = "SELECT * FROM {$this->tableName} fitmint.kommentar WHERE benutzer_id = $benutzer_id";
+		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
+		$statement->bind_param ( 'i', $benutzer_id ); // eingrenzen was bekommen
+		if (! $statement->execute ()) {
+			throw new Exception ( $statement->error );
+		}
+		$result = $statement->get_result ();
+		$array = array ();
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while ( $row = $result->fetch_assoc () ) { // solange es noch daten hat geht es eins nach dem anderen durch in db// fetch holen
+				$kommentarArray = new KommentarArray ();
+				$kommentarArray->setId ( $row ["id"] );
+				$kommentarArray->setBenutzer_id ( $row ["benutzer_id"] );
+				$kommentarArray->setInhalt ( $row ["inhalt"] );
+				array_push ( $array, $kommentarArray );
+			}
+			return $array;
+		}
+	}
+	
 }
 ?>

@@ -32,7 +32,13 @@ class KommentarController {
 	
 	public function doDeleteKommentar(){
 		$kommentarRepository = new KommentarRepository();
-		$kommentarRepository->deleteKommentar($id, $benutzerId);
+		$kommentar = $kommentarRepository->selectComment();
+		if ($idBenutzer == $_SESSION ['loggedInUserId']){
+			$kommentarRepository->deleteKommentar($_GET ['kommentarId']);
+		} else {
+			echo "Der Kommentar kann nicht gelöscht werden.";
+		}
+		header ( 'Location: /home' );
 	}
 }
 ?>
