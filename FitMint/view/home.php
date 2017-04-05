@@ -90,7 +90,8 @@ for($i = 0; $i < count ( $postArray ); $i += 2) :
 <?php
 	for($j = 0; $j < count ( $kommentarArray ); $j += 2) :
 		$data3 = $kommentarArray [$j];
-		$data4 = $kommentarArray [$j + 1]; ?>
+		$data4 = $kommentarArray [$j + 1];
+		?>
        <!-- START THE FEATURETTES -->
 	<!-- <hr class="featurette-divider">-->
 
@@ -100,7 +101,7 @@ for($i = 0; $i < count ( $postArray ); $i += 2) :
     <?php echo $data1->getTitel(); ?> 
                     </h2>
 			<p class="lead"><?php echo $data1->getBeschreibung(); ?></p>
-				<h3>Kommentare:</h3>
+			<h3>Kommentare:</h3>
 <?php if(isset ($_SESSION['loggedin'])): ?>
 	
 			<form class="form-signin" method="post" action="/user/like">
@@ -124,16 +125,14 @@ for($i = 0; $i < count ( $postArray ); $i += 2) :
 				<input type="hidden" name=postId
 					value="<?php echo $data1->getPostId(); ?>">
 				<button type="submit" class="btn btn-info">Senden</button>
-			</form>
-			
+			</form>		
 <?php endif;?>
 			<div>
-			
-			
 			<?php
-		
 		for($k = 0; $k < count ( $data3 ); $k += 1) {
+			echo "<br>";
 			echo $data3 [$k]->getEmail ();
+			echo "<br>";
 			echo $data3 [$k]->getInhalt ();
 			echo "<br>";
 		}
@@ -185,7 +184,9 @@ for($i = 0; $i < count ( $postArray ); $i += 2) :
 			<?php
 		
 		for($l = 0; $l < count ( $data4 ); $l += 1) {
+			echo "<br>";
 			echo $data4 [$l]->getEmail ();
+			echo "<br>";
 			echo $data4 [$l]->getInhalt ();
 			echo "<br>";
 		}
