@@ -34,8 +34,7 @@ h3 {
 	margin-top: 25px;
 }
 
-
-/*============================================================================
+/*==============
 SIGN IN -> Login -> Login*/
 .form-signin .form-signin-heading, .form-signin .checkbox {
 	margin-bottom: 10px;
@@ -77,8 +76,6 @@ SIGN IN -> Login -> Login*/
 	margin: 0 auto;
 	float: left;
 }
-
-
 
 /*============================================================================
 SIGN IN 1 -> Login -> Registrieren*/
@@ -122,8 +119,6 @@ SIGN IN 1 -> Login -> Registrieren*/
 	margin: 10 auto;
 	float: right;
 }
-
-
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -283,16 +278,14 @@ Farbpalette ändern  */
 
 /* --------------------------------------------------
 Kommentare ändern  */
-
 #change-Comment {
-    margin: auto;
-    width: 30%;
-    border: 1px #D6EEE9;
-    padding: 10px;
+	margin: auto;
+	width: 30%;
+	border: 1px #D6EEE9;
+	padding: 10px;
 }
 
 .tabulator {
 	margin-left: 10px;
 	margin-right: 10px;
 }
-

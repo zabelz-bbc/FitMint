@@ -3,15 +3,7 @@ require_once '../lib/Repository.php';
 require_once '../repository/KommentarArray.php';
 class KommentarRepository extends Repository {
 	protected $tableName = 'kommentar';
-	
-	/**
-	 *
-	 * @param unknown $benutzerId        	
-	 * @param unknown $postId        	
-	 * @param unknown $kommentar        	
-	 * @throws Exception
-	 * @return unknown
-	 */
+
 	public function saveComment($benutzerId, $postId, $kommentar) {
 		$query = "INSERT INTO kommentar (benutzer_id, post_id, inhalt) VALUES (?,?,?)";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
@@ -21,12 +13,14 @@ class KommentarRepository extends Repository {
 		}
 		return $statement->insert_id;
 	}
+	
 	public function selectComment($postId) {
 		$query = "SELECT inhalt FROM fitmint.kommentar WHERE postId=?";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
 		$statement->bind_param ( 's', $kommentar );
 		return $kommentar;
 	}
+	
 	public function selectCommentByKommentarId($kommentarId) {
 		$query = "SELECT benutzer_id FROM {$this->tableName} WHERE id=?";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
@@ -39,7 +33,6 @@ class KommentarRepository extends Repository {
 		return $row ["benutzerId"];
 	}
 	
-	
 	public function editKommentar($id, $inhalt) {
 		$sql = "update kommentar set inhalt=? where id=?";
 		$statement = Connectionhandler::getConnection ()->prepare ( $sql );
@@ -48,7 +41,6 @@ class KommentarRepository extends Repository {
 			throw new exception ( $statement->error );
 		}
 	}
-	
 	
 	public function deleteKommentarById($id) {
 		$sql = "DELETE FROM {$this->tableName} WHERE id=?";
@@ -59,6 +51,7 @@ class KommentarRepository extends Repository {
 			throw new Exception ( $statement->error );
 		}
 	}
+	
 	public function getKommentar() {
 		$sql = "SELECT kommentar.id, post_id, inhalt, email FROM {$this->tableName}
 		join fitmint.benutzer on benutzer.id = kommentar.benutzer_id";
@@ -82,6 +75,7 @@ class KommentarRepository extends Repository {
 			return $arrayKommentar;
 		}
 	}
+	
 	public function getKommentarbyPostId($post_id) {
 		$sql = "SELECT kommentar.id as 'id', benutzer.id as 'user_id', post_id, inhalt, email FROM {$this->tableName} join fitmint.benutzer on benutzer.id = kommentar.benutzer_id where post_id=?";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );
@@ -105,6 +99,7 @@ class KommentarRepository extends Repository {
 			return $array;
 		}
 	}
+	
 	public function getKommentarbyBenutzerId($benutzer_id) {
 		$sql = "SELECT * FROM {$this->tableName} WHERE benutzer_id = $benutzer_id";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );

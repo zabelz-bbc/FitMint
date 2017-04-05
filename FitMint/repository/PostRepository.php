@@ -3,18 +3,7 @@ require_once '../lib/Repository.php';
 require_once 'PostArray.php';
 class PostRepository extends Repository {
 	protected $tableName = 'post';
-	
-	/**
-	 *
-	 * @param $firstName Wert
-	 *        	für die Spalte firstName
-	 * @param $lastName Wert
-	 *        	für die Spalte lastName
-	 * @param $email Wert
-	 *        	für die Spalte email
-	 * @param $password Wert
-	 *        	für die Spalte password
-	 */
+
 	public function getPosts() {
 		$sql = "SELECT id, bildpfad, beschreibung, titel, anzLike, anzDislike FROM {$this->tableName}";
 		$statement = ConnectionHandler::getConnection ()->prepare ( $sql );

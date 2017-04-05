@@ -40,7 +40,6 @@ class KommentarArray {
 	public function setBenutzer_id($benutzer_id) {
 		$this->benutzer_id = $benutzer_id;
 	}
-
 }
 
 ?>
