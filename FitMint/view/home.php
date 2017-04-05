@@ -132,7 +132,7 @@ for($i = 0; $i < count ( $postArray ); $i += 2) :
 		for($k = 0; $k < count ( $data3 ); $k += 1) {
 			echo "<br>";
 			echo $data3 [$k]->getEmail ();
-			echo "<br>";
+		
 			echo $data3 [$k]->getInhalt ();
 			if ($data3 [$k]->getBenutzer_id () == $_SESSION ['loggedInUserId']) {
 				echo '<a href="/kommentar/doDeleteKommentar?kommentarId=' . $data3 [$k]->getId () . '&benutzerId=' . $data3 [$k]->getBenutzer_id () . '">  --> delete</a>';
