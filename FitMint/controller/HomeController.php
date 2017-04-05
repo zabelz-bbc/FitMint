@@ -20,7 +20,6 @@ class HomeController {
 		
 		$view->postArray = $postArray;
 		$view->kommentarArray = $kommentarArray;
-		
 		$view->display ();
 	}
 	public function ueberUns() {
@@ -29,6 +28,7 @@ class HomeController {
 		$view->active = 'ueberUns';
 		$view->display ();
 	}
+	
 	public function einstellungen() {
 		$view = new View ( 'user_einstellungen' );
 		$view->title = 'Einstellungen';

@@ -2,6 +2,7 @@
 require_once '../repository/UserRepository.php';
 require_once '../repository/VoteRepository.php';
 class UserController {
+	
 	public function index() {
 		$userRepository = new UserRepository ();
 		$view = new View ( 'user_index' );
@@ -11,9 +12,9 @@ class UserController {
 		$view->active = 'home';
 		$view->display ();
 	}
+	
 	public function login() {
 		$userRepository = new UserRepository ();
-		
 		$view = new View ( 'user_login' );
 		$view->title = 'Benutzer';
 		$view->heading = '';
@@ -21,6 +22,7 @@ class UserController {
 		$view->active = 'login';
 		$view->display ();
 	}
+	
 	public function einstellungen() {
 		$userRepository = new UserRepository ();
 		$view = new View ( 'user_einstellungen' );
@@ -30,16 +32,17 @@ class UserController {
 		$view->active = 'einstellungen';
 		$view->display ();
 	}
+	
 	public function doCreateUser() {
 		$email = $_POST ['email'];
 		$password = $_POST ['password'];
-		
 		$userRepository = new UserRepository ();
 		$userRepository->create ( $email, $password );
 		header ( 'Location: /home' );
 		$this->loginToAccount ();
 		exit ();
 	}
+	
 	public function loginToAccount() {
 		$email = $_POST ['email'];
 		$password = $_POST ['password'];
@@ -47,7 +50,6 @@ class UserController {
 		$row = $userRepository->loginToAccount ( $email, $password );
 		
 		if ($row != NULL) {
-			
 			$_SESSION ['email'] = $row->email;
 			$_SESSION ['loggedInUserId'] = $row->id;
 			$_SESSION ['loggedin'] = true;
@@ -60,15 +62,18 @@ class UserController {
 			$view->display();
 		}
 	}
+	
 	public function delete() {
 		$userRepository = new UserRepository ();
 		$userRepository->deleteById ( $_GET ['id'] );
 		header ( 'Location: /user' );
 	}
+	
 	public function logout() {
 		session_destroy ();
 		header ( 'Location: /home' );
 	}
+	
 	public function like() {
 		if (isset ( $_SESSION ["loggedin"] )) {
 			$voteRepository = new VoteRepository ();
@@ -78,6 +83,7 @@ class UserController {
 			header ( 'Location: /home' );
 		}
 	}
+	
 	public function dislike() {
 		if (isset ( $_SESSION ["loggedin"] )) {
 			$voteRepository = new VoteRepository ();

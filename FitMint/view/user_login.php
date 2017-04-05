@@ -10,10 +10,11 @@
 			for="inputPassword" class="sr-only">Password</label> <input
 			type="password" id="inputPassword" name="password"
 			class="form-control" placeholder="Passwort" required>
-		<?php if(isset ($_GET ['error'])) {
-			'aölskdjf';
-		} ?>
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Einloggen</button>
+		<?php if(isset ($_GET ['error'])) {
+			echo $_GET ['error'];
+		} 
+		?>
 	</form>
 
 

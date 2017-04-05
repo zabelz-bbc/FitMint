@@ -50,7 +50,7 @@ class UserRepository extends Repository {
 				return $row;
 			}
 			
-			header ( 'Location: /user/login ?error = Bitte überprüfen sie Ihre Eingaben.' ) ;
+			header ( 'Location: /user/login?error=Bitte überprüfen sie Ihre Eingaben' ) ;
 		}
 	}
 	public function changePassword($benutzerId, $passwort) {
