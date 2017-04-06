@@ -33,7 +33,14 @@ class KommentarRepository extends Repository {
 		return $row ["benutzerId"];
 	}
 	
-	public function editKommentar($id, $inhalt) {
+	public function showKommentar($id){
+		$query = "SELECT inhalt FROM fitmint.kommentar WHERE kommentar.id=?";
+		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
+		$statement->bind_param ( 's', $kommentar );
+		return $kommentar;
+	}
+	
+	public function updateKommentar($id, $inhalt) {
 		$sql = "update kommentar set inhalt=? where id=?";
 		$statement = Connectionhandler::getConnection ()->prepare ( $sql );
 		$statement->bind_param ( 'is', $id, $inhalt );

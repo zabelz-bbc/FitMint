@@ -31,19 +31,6 @@ var fcolorbg = "f1edda";
 </div>
 
 
-<div id="change-comment">
-	
-	<form action="/kommentar/doChangeKommentar" method="post">
-		<p>Hier können sie ihre geschriebenen Kommtenare ändern.</p>
-		
-		<textarea rows="5" cols="40" placeholder="geänderter Kommentar"></textarea>
-		<button type="submit" class="btn btn-info">Kommentar ändern</button>
-	</form>
-	
-	<form action="Kommentar/doDeleteKommentar" method="post">
-			<button type="submit" class="btn btn-info">Kommentar löschen</button>
-	</form>
-</div>
 <!-- Page Up Button
     ================================================== -->
 

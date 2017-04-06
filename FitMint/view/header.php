@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title><?= $title ?> | FitMint</title>
 
 <link rel="stylesheet"
@@ -12,11 +11,9 @@
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
 	crossorigin="anonymous">
 
-
 <link href="/css/style.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lora"
 	rel="stylesheet">
-
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -39,7 +36,6 @@
 			
 			
 			<?php if(isset ($_SESSION['loggedin'])): /* Nach dem if wird die Navigation gezeigt, bei endif hört es auf.*/?>
-
 				<div class="navbar-wrapper">
 			<div class="container">
 

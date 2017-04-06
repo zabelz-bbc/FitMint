@@ -1,6 +1,5 @@
 <?php
 require_once '../repository/KommentarRepository.php';
-require_once '../view/editKommentar.php';
 class KommentarController {
 	
 	public function doCreateComment() {
@@ -9,22 +8,22 @@ class KommentarController {
 		header ( "Location: /" ); // Location macht eine neue Anfrage und gelangt zur index Funktion. Diese ruft die Home Seite auf.
 		exit ();
 	}
-	public function doEditKommentar() {
-		$view = new View ( 'editKommentar' );
-		$view->title = 'Kommentar ändern';
+
+	
+	public function doUpdateKommentar(){
+		$kommentarRepository = new KommentarRepository();
+		$kommentarRepository->updateKommentar($_POST ["id"], $inhalt);
+		header ( 'Location: /home' );
+	}
+		
+	public function doShowKommentar(){
+		$view = new View ( 'changeKommentar' );
+		$kommentarRepository = new KommentarRepository();
+		$view->title = '';
 		$view->heading = '';
 		$view->active = 'home';
+		$view->kommentarInhalt = $kommentarRepository->showKommentar($_GET ['kommentarId']);
 		$view->display ();
-		
-		
-		/*header ('Location: /editKommentar' );
-		$kommentarRepository = new KommentarRepository ();
-		$kommentarRepository->editKommentar ( $_POST ["id"], $inhalt );*/
-	}
-	public function doGetKommentar() {
-		$kommentarGetRepository = new KommentarRepositoryGet ();
-		$kommentarGetRepository->getKommentar ();
-		return $kommentarGetRepository;
 	}
 	
 	public function getPostId() {
