@@ -12,8 +12,7 @@ class KommentarController {
 	
 	public function doUpdateKommentar(){
 		$kommentarRepository = new KommentarRepository();
-		$kommentarRepository->updateKommentar($_POST ["id"], $inhalt);
-		header ( 'Location: /home' );
+		$kommentarRepository->updateKommentar($_POST ["id"], $_POST['inhalt']);
 	}
 		
 	public function doShowKommentar(){
@@ -23,6 +22,7 @@ class KommentarController {
 		$view->heading = '';
 		$view->active = 'home';
 		$view->kommentarInhalt = $kommentarRepository->showKommentar($_GET ['kommentarId']);
+		$view->id = $_GET['kommentarId'];
 		$view->display ();
 	}
 	

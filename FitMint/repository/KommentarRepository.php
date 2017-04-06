@@ -43,7 +43,7 @@ class KommentarRepository extends Repository {
 	public function updateKommentar($id, $inhalt) {
 		$sql = "update kommentar set inhalt=? where id=?";
 		$statement = Connectionhandler::getConnection ()->prepare ( $sql );
-		$statement->bind_param ( 'is', $id, $inhalt );
+		$statement->bind_param ( 'si', $inhalt, $id );
 		if (! $statement->execute ()) {
 			throw new exception ( $statement->error );
 		}
