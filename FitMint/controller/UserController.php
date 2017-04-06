@@ -36,11 +36,18 @@ class UserController {
 	public function doCreateUser() {
 		$email = $_POST ['email'];
 		$password = $_POST ['password'];
+		$repeatpassword = $_POST['repeatpassword'];
+		if (strcmp($password, $repeatpassword)== 0) {
+			
+		
 		$userRepository = new UserRepository ();
 		$userRepository->create ( $email, $password );
 		header ( 'Location: /home' );
 		$this->loginToAccount ();
-		exit ();
+		exit ();}
+		else{
+			header ( 'Location: /user/login?errorRegister=Bitte überprüfen sie Ihre Eingaben' );
+		}
 	}
 	
 	public function loginToAccount() {

@@ -11,9 +11,11 @@
 			type="password" id="inputPassword" name="password"
 			class="form-control" placeholder="Passwort" required>
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Einloggen</button>
-		<?php if(isset ($_GET ['error'])) {
+		<?php
+		
+if (isset ( $_GET ['error'] )) {
 			echo $_GET ['error'];
-		} 
+		}
 		?>
 	</form>
 
@@ -27,9 +29,17 @@
 			name="password" type="password" id="inputPassword"
 			class="form-control" placeholder="Passwort" required> <label
 			for="inputPassword" class="sr-only">Password</label> <input
-			name="password" type="password" id="inputPassword"
+			name="repeatpassword" type="password" id="inputPassword"
 			class="form-control" placeholder="Passwort bestätigen" required>
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Registeren</button>
+		
+		
+		<?php
+		
+if (isset ( $_GET ['errorRegister'] )) {
+			echo $_GET ['errorRegister'];
+		}
+		?>
 	</form>
 
 </div>
