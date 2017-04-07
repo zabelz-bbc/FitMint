@@ -6,7 +6,15 @@ class PostArray {
 	private $anzLike;
 	private $anzDislike;
 	private $id;
+	private $kommentare = array();
 	
+	public function getKommentare() {
+		return $this->kommentare;
+	}
+	public function setKommentare($kommentareArray) 
+	{
+		$this->kommentare = $kommentareArray;
+	}
 	public function getPostId() {
 		return $this->id;
 	}

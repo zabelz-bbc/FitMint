@@ -11,15 +11,14 @@ class HomeController {
 		$postRepository = new PostRepository ();
 		$postArray = $postRepository->getPosts ();
 		$kommentarArray = array ();
+		$kommentarRepository = new KommentarRepository ();
 		
-		foreach ( $postArray as $pa ) {
-			$kommentarRepository = new KommentarRepository ();
-			$postComments = $kommentarRepository->getKommentarbyPostId ( $pa->getPostId () );
-			array_push ( $kommentarArray, $postComments );
+		foreach ( $postArray as $pa ) 
+		{
+			$pa->setKommentare($kommentarRepository->getKommentarbyPostId ( $pa->getPostId () ));
 		}
 		
 		$view->postArray = $postArray;
-		$view->kommentarArray = $kommentarArray;
 		$view->display ();
 	}
 	public function ueberUns() {

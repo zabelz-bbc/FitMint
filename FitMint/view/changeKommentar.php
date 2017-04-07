@@ -1,7 +1,6 @@
-
 <h1>Kommentar ändern</h1>
 <?php 
-echo $kommentarInhalt;
+echo htmlspecialchars($kommentarInhalt);
 ?>
 
 <form action="/kommentar/doUpdateKommentar" method="post">

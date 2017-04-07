@@ -7,7 +7,7 @@ class Dispatcher {
 		$uri = trim ( $uri, '/' ); 
 		$uriFragments = explode ( '/', $uri ); 
 		                                    
-		$controllerName = 'DefaultController';
+		$controllerName = 'HomeController';
 		if (! empty ( $uriFragments [0] )) {
 			$controllerName = $uriFragments [0];
 			$controllerName = ucfirst ( $controllerName ); 
