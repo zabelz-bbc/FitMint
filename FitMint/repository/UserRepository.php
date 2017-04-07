@@ -3,6 +3,21 @@ require_once '../lib/Repository.php';
 class UserRepository extends Repository {
 	protected $tableName = 'benutzer';
 	
+	public function doesUserExist($email){
+		$query = "SELECT email FROM {$this->tableName} WHERE email=?";
+		$statement = ConnectionHandler::getConnection ()->prepare ( $query );
+		$statement->bind_param ( 's', $email );
+		if (! $statement->execute ()) {
+			throw new Exception ( $statement->error );
+		}
+		$result = $statement->get_result ();
+		if (mysqli_num_rows($result) > 0 ){
+			return true;
+		} else{
+			return false;
+		}
+	}
+	
 	public function create($email, $password) {
 		$password = password_hash ( $password, PASSWORD_BCRYPT, array ('cost' => 14 ) );
 		$query = "INSERT INTO {$this->tableName} (email, passwort) VALUES (?, ?)";

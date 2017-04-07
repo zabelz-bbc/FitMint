@@ -1,7 +1,7 @@
 
-<h1>Einstellungen</h1>
-<form class="form-signin">
-	<h2 class="form-signin-heading">Passwort ändern</h2>
+<h1>Einstellungen (in Arbeit)</h1>
+<form class="form-passwort">
+	<h2 class="form-passwort-heading">Passwort ändern</h2>
 	<label for="inputPassword" class="sr-only">Password</label> <input
 		type="password" id="inputPassword" class="form-control"
 		placeholder="altes Passwort" required autofocus> <label

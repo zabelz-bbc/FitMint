@@ -264,9 +264,33 @@ Thin out the marketing headings
 	position: fixed;
 }
 
+/*Home
+/*============================================================================*/
+.beschreibungRight{
+	width: 500px;
+	margin: 0 600px;
+	border-line: 3px black;
+}
+
+.postLeft{
+	margin-top: 220px;
+	width: 400px;
+	float: left;
+	border-line: 3px black;
+	
+}
+
+.postect{
+	height: auto;
+	width: 800px;
+	border-layout: 3px black;
+}
+
+
 /* Einstellungen
 /*============================================================================
 Farbpalette ändern  */
+
 #color01 {
 	text-align: center;
 	width: 404px;
@@ -277,10 +301,47 @@ Farbpalette ändern  */
 	margin-right: auto
 }
 
-/* --------------------------------------------------
+
+/*Passwort ändern - Einstellungen */
+
+.form-passwort .form-passwort-heading, .form-passwort .checkbox {
+	margin-bottom: 10px;
+}
+
+.form-passwort .checkbox {
+	font-weight: normal;
+}
+
+.form-passwort .form-control {
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.form-passwort .form-control:focus {
+	z-index: 2;
+}
 
 
-.tabulator {
-	margin-left: 10px;
-	margin-right: 10px;
+.form-passwort input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.form-passwort {
+	max-width: 330px;
+	padding: 15px;
+	margin-left: 43%;
+	, auto;
+	
+}
+.KommentareÄndern {
+	margin: 5px 400px;
+	text-align: center;
+
 }

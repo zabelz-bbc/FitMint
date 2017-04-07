@@ -2,11 +2,11 @@
 require_once '../lib/Dispatcher.php';
 require_once '../lib/View.php';
 
-// try{
+try{
 session_start();
 $dispatcher = new Dispatcher();
 $dispatcher->dispatch();
-// } catch (Exception e){
-// 	// Log todo
-// }
-// ?>
+ } catch (Exception $e){
+header("location: /");
+ }
+ ?>

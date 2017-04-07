@@ -2,7 +2,6 @@
 require_once '../repository/UserRepository.php';
 require_once '../repository/VoteRepository.php';
 class UserController {
-	
 	public function index() {
 		$userRepository = new UserRepository ();
 		$view = new View ( 'user_index' );
@@ -12,7 +11,6 @@ class UserController {
 		$view->active = 'home';
 		$view->display ();
 	}
-	
 	public function login() {
 		$userRepository = new UserRepository ();
 		$view = new View ( 'user_login' );
@@ -22,7 +20,6 @@ class UserController {
 		$view->active = 'login';
 		$view->display ();
 	}
-	
 	public function einstellungen() {
 		$userRepository = new UserRepository ();
 		$view = new View ( 'user_einstellungen' );
@@ -32,24 +29,24 @@ class UserController {
 		$view->active = 'einstellungen';
 		$view->display ();
 	}
-	
 	public function doCreateUser() {
 		$email = $_POST ['email'];
 		$password = $_POST ['password'];
-		$repeatpassword = $_POST['repeatpassword'];
-		if (strcmp($password, $repeatpassword)== 0) {
-			
-		
-		$userRepository = new UserRepository ();
-		$userRepository->create ( $email, $password );
-		header ( 'Location: /home' );
-		$this->loginToAccount ();
-		exit ();}
-		else{
+		$repeatpassword = $_POST ['repeatpassword'];
+		if (strcmp ( $password, $repeatpassword ) == 0) {
+			$userRepository = new UserRepository ();
+			if ($userRepository->doesUserExist ( $email )) {
+				header ( 'Location: /user/login?errorRegister=Diese Email wird bereits verwendet. Bitte registrieren Sie sich mit einer anderen.' );
+			} else {
+				$userRepository->create ( $email, $password );
+				header ( 'Location: /home' );
+				$this->loginToAccount ();
+				exit ();
+			}
+		} else {
 			header ( 'Location: /user/login?errorRegister=Bitte überprüfen sie Ihre Eingaben' );
 		}
 	}
-	
 	public function loginToAccount() {
 		$email = $_POST ['email'];
 		$password = $_POST ['password'];
@@ -64,23 +61,20 @@ class UserController {
 			header ( 'Location: /home' );
 			exit ();
 		} else {
-			$view = new View ('loginFailure');
+			$view = new View ( 'loginFailure' );
 			$view->active = 'login';
-			$view->display();
+			$view->display ();
 		}
 	}
-	
 	public function delete() {
 		$userRepository = new UserRepository ();
 		$userRepository->deleteById ( $_GET ['id'] );
 		header ( 'Location: /user' );
 	}
-	
 	public function logout() {
 		session_destroy ();
 		header ( 'Location: /home' );
 	}
-	
 	public function like() {
 		if (isset ( $_SESSION ["loggedin"] )) {
 			$voteRepository = new VoteRepository ();
@@ -90,7 +84,6 @@ class UserController {
 			header ( 'Location: /home' );
 		}
 	}
-	
 	public function dislike() {
 		if (isset ( $_SESSION ["loggedin"] )) {
 			$voteRepository = new VoteRepository ();
